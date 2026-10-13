@@ -12,7 +12,8 @@
 <style>
 /* Layout: a phone-width app, one question per screen (city → problem → what to do).
    Identity: India Post inland letter — pale blue lined card, post-office red, blue-black ink,
-   typewriter text for official parts, handwriting for what the citizen writes, a rubber stamp when it is sent. */
+   typewriter text for official parts, handwriting for what the citizen writes, a DRAFT stamp while it is being prepared.
+   The app never claims a complaint is registered: only the office's own complaint number does that. */
 :root{
   --bg:#E9EEF2; --paper:#F7F9FB; --inland:#D3E4F1; --inland-line:#A9C3D9;
   --ink:#16213D; --ink-2:#4A5672; --red:#C8102E; --red-soft:#F6D9DD; --rule:#C9D3DC; --ok:#1E6B45; --warn:#9A5B00;
@@ -135,6 +136,24 @@ textarea.blank{display:block;width:100%;resize:vertical;min-height:68px;border:2
 @keyframes stamp{0%{opacity:0;transform:translate(30px,-60px) rotate(-40deg) scale(2.4)}60%{opacity:.95;transform:rotate(-12deg) scale(.94)}100%{opacity:.92;transform:rotate(-14deg) scale(1)}}
 @keyframes press{50%{transform:rotateX(6deg) scale(.99)}}
 .sendrow{display:flex;gap:8px;flex-wrap:wrap}
+.status{display:flex;align-items:center;gap:8px;font-family:var(--type);font-weight:700;font-size:.85rem;padding:8px 12px;border-radius:10px;border:2px dashed var(--ink-2);color:var(--ink-2);background:var(--paper)}
+.status::before{content:"";width:10px;height:10px;border-radius:50%;background:currentColor;flex:none}
+.status[data-s="copied"],.status[data-s="shared"]{border-color:var(--warn);color:var(--warn)}
+.status[data-s="recorded"]{border-style:solid;border-color:var(--ok);color:var(--ok)}
+.truth{border:2px solid var(--ink);border-radius:14px;padding:12px 14px;background:var(--paper);font-size:.95rem}
+.truth b{color:var(--red)}
+.howto{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:6px}
+.howto li::marker{font-family:var(--type);font-weight:700;color:var(--red)}
+.hint{font-size:.88rem;color:var(--ink-2);margin:0}
+.refbox{display:flex;flex-direction:column;gap:10px;background:var(--paper);border:1.5px solid var(--rule);border-radius:14px;padding:14px}
+.refbox label{font-weight:700;font-size:.9rem}
+.refbox input{font:inherit;font-family:var(--type);font-size:1.05rem;border:2px solid var(--ink);border-radius:10px;padding:10px 12px;background:var(--bg);color:var(--ink);width:100%}
+.refrow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.refrow>div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.refs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.refs li{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px dashed var(--rule);padding-top:8px}
+.refs .no{font-family:var(--type);font-weight:700}
+.where-list{margin:0;padding-left:1.2em;font-size:.92rem;color:var(--ink-2)}
 
 /* other ways */
 .ways{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
@@ -202,10 +221,24 @@ const UI={
   other:'और तरीके',reps:'आपके चुने हुए प्रतिनिधि',call:'कॉल करें',copy:'कॉपी',copied:'कॉपी हो गया',copyFail:'नीचे से टेक्स्ट चुनकर कॉपी करें।',manualT:'टेक्स्ट चुनकर कॉपी करें',report:'कोई नंबर ग़लत है? हमें बताएँ',share:'ये नंबर साझा करें',shareWa:'नंबर WhatsApp पर भेजें',
   visit:'खोलें',ok:'पुष्ट',chk:'जाँचें',noNum:'इस शहर की पुष्ट हेल्पलाइन अभी नहीं जुड़ी। नीचे राज्य का माध्यम सबसे भरोसेमंद है।',
   to:'सेवा में,',subj:'विषय:',body1:'महोदय/महोदया,',at:'जगह',since:'कितने दिन से',more:'और क्या बताना है (वैकल्पिक)',ask:'कृपया जल्द कार्रवाई करें और शिकायत क्रमांक दें।',sign:'नाम',
-  wa:'WhatsApp पर भेजें',cp:'पत्र कॉपी करें',stamp:'दर्ज',stampTop:'जवाबदेह',
+  wa:'मसौदा WhatsApp पर साझा करें',cp:'मसौदा कॉपी करें',stamp:'मसौदा',stampTop:'अभी दर्ज नहीं',
+  prepH:'शिकायत तैयार करें',submitH:'सरकारी माध्यम पर दर्ज करें',saveH:'शिकायत क्रमांक संभालें',
+  st_draft:'मसौदा · अभी कहीं दर्ज नहीं',st_copied:'मसौदा कॉपी हुआ · अभी दर्ज नहीं',st_shared:'भेजने को तैयार · अभी दफ़्तर तक नहीं पहुँचा',st_recorded:n=>'आपने शिकायत क्रमांक '+n+' नोट किया है',
+  waHint:'WhatsApp आपके अपने संपर्क खोलता है। किसी दोस्त को या ख़ुद को भेजने से शिकायत दर्ज नहीं होती।',
+  truth:'<b>यह ऐप आपकी शिकायत सरकार को नहीं भेजता।</b> शिकायत तभी दर्ज मानी जाती है जब संबंधित दफ़्तर आपको <b>शिकायत क्रमांक</b> (रेफ़रेंस नंबर) दे।',
+  how_phone:['इस नंबर पर कॉल करें।','अपना पत्र पढ़कर सुनाएँ: जगह, समस्या, कब से।','फ़ोन रखने से पहले पूछें: "मेरा शिकायत क्रमांक क्या है?" और लिख लें।'],
+  how_web:['पोर्टल खोलें और अपना शहर / विभाग चुनें।','विवरण वाले खाने में अपना कॉपी किया हुआ पत्र पेस्ट करें।','सबमिट करें। आख़िरी पेज या SMS पर मिला शिकायत क्रमांक लिख लें।'],
+  how_app:['आधिकारिक ऐप इंस्टॉल करें।','फ़ोटो के साथ शिकायत करें और अपना पत्र पेस्ट करें।','ऐप में दिखा शिकायत क्रमांक लिख लें।'],
+  how_in_person:['बताए गए दिन और समय पर दफ़्तर जाएँ।','पत्र की छपी या लिखी कॉपी दें।','पावती (रसीद) माँगें, जिस पर क्रमांक या मुहर हो।'],
+  officialWa:'आधिकारिक WhatsApp पर मसौदा भेजें',officialWaHint:'जवाब में शिकायत क्रमांक आए, तभी शिकायत दर्ज मानें।',
+  refWhere:'शिकायत क्रमांक कहाँ मिलता है:',refWhereList:['कॉल पर ऑपरेटर बताता है — फ़ोन रखने से पहले पूछ लें','पोर्टल / ऐप का आख़िरी पेज, या बाद में आया SMS','दफ़्तर में दी गई पावती (रसीद)'],
+  refKeep:'उसका स्क्रीनशॉट या फ़ोटो लें, और नीचे लिख लें। आगे हर कदम और RTI में यही नंबर चाहिए।',
+  refLabel:'शिकायत / रेफ़रेंस नंबर',refDate:'तारीख़',refSave:'इस फ़ोन पर सहेजें',refSaved:'इस फ़ोन पर सहेजा गया',refDel:'हटाएँ',refNeed:'पहले नंबर लिखें',
+  refPrivacy:'यह सिर्फ़ इसी फ़ोन के ब्राउज़र में रहता है। कहीं भेजा नहीं जाता।',refNoStore:'यह ब्राउज़र सहेजने नहीं देता। नंबर की फ़ोटो लें या कहीं लिख लें।',
+  yourNo:'आपका शिकायत क्रमांक',quote:'हर कदम पर अपना शिकायत क्रमांक बताएँ।',
   waits:['आज','7 दिन बाद','15 दिन बाद','30 दिन बाद','45 दिन बाद','60 दिन बाद'],waitNote:'इंतज़ार के दिन सुझाव हैं, नियम नहीं।',
   mp:'सांसद',mla:'विधायक',nameMissing:'नाम अभी नहीं जुड़ा',councillor:'वार्ड पार्षद',councillorMissing:'अभी नहीं जुड़ा',voter:'वोटर पर्ची पर आपका विधानसभा क्षेत्र लिखा होता है — उसी से विधायक पता चलता है।',
-  foot:['नंबर बदलते रहते हैं। “जाँचें” वाली जानकारी पर भरोसा करने से पहले पुष्टि करें।','आप जो लिखते हैं, वह आपके फ़ोन से बाहर नहीं जाता।','खुला डेटा। NGO और कोई भी इसे मुफ़्त इस्तेमाल और बेहतर कर सकता है।'],
+  foot:['यह ऐप कोई शिकायत सरकार को नहीं भेजता — सिर्फ़ तैयार करने और सही दफ़्तर तक पहुँचने में मदद करता है।','नंबर बदलते रहते हैं। “जाँचें” वाली जानकारी पर भरोसा करने से पहले पुष्टि करें।','आप जो लिखते हैं, वह आपके फ़ोन से बाहर नहीं जाता।','खुला डेटा। NGO और कोई भी इसे मुफ़्त इस्तेमाल और बेहतर कर सकता है।'],
   sos:'आपात स्थिति में पहले 112 पर कॉल करें।',helpline:'हेल्पलाइन',power:'बिजली शिकायत (सभी बिजली कंपनियाँ)',police:'पुलिस',center:'केंद्र सरकार',write2:'लिखित शिकायत यहाँ भेजें'},
  en:{tag:'complaints · to the right office',lang:'हिंदी',steps:['City','Problem','What to do'],
   q1:'Which <em>city</em> are you in?',s1:n=>n+' cities. Not listed? Check your state below.',find:'Type a city or state…',again:'Last time',none:'This city is not added yet.',
@@ -214,10 +247,24 @@ const UI={
   other:'Other ways',reps:'Your elected representatives',call:'Call',copy:'Copy',copied:'Copied',copyFail:'Select the text below to copy it.',manualT:'Select and copy this text',report:'Wrong number? Tell us',share:'Copy these numbers',shareWa:'Send numbers on WhatsApp',
   visit:'Open',ok:'verified',chk:'check',noNum:'No verified city helpline yet. The state channel below is the most reliable route.',
   to:'To,',subj:'Subject:',body1:'Respected Sir/Madam,',at:'place',since:'for how long',more:'anything else (optional)',ask:'Kindly take action soon and share the complaint number.',sign:'Name',
-  wa:'Send on WhatsApp',cp:'Copy letter',stamp:'FILED',stampTop:'JAWABDEH',
+  wa:'Share draft on WhatsApp',cp:'Copy draft',stamp:'DRAFT',stampTop:'NOT SUBMITTED',
+  prepH:'Prepare your complaint',submitH:'Submit it to the official channel',saveH:'Save your complaint number',
+  st_draft:'Draft · not submitted anywhere',st_copied:'Draft copied · not submitted yet',st_shared:'Ready to send · not with the office yet',st_recorded:n=>'You recorded complaint number '+n,
+  waHint:'WhatsApp opens your own contacts. Sending this to a friend or to yourself does not register a complaint.',
+  truth:'<b>This app does not send your complaint to the government.</b> A complaint counts as registered only when the office gives you a <b>complaint number</b> (reference number).',
+  how_phone:['Call this number.','Read out your letter: the place, the problem, since when.','Before you hang up, ask "What is my complaint number?" and write it down.'],
+  how_web:['Open the portal and choose your city / department.','Paste your copied letter into the description box.','Submit, then write down the complaint number on the last screen or in the SMS.'],
+  how_app:['Install the official app.','File the complaint with a photo and paste your letter.','Write down the complaint number the app shows.'],
+  how_in_person:['Go to the office on the day and time shown.','Hand over a printed or written copy of your letter.','Ask for an acknowledgement with a number or office stamp.'],
+  officialWa:'Send draft to the official WhatsApp',officialWaHint:'Treat it as registered only when the reply gives you a complaint number.',
+  refWhere:'Where you get the complaint number:',refWhereList:['The operator says it on the call — ask before you hang up','The last screen of the portal or app, or an SMS afterwards','The acknowledgement slip at the office'],
+  refKeep:'Take a screenshot or photo of it and note it below. You need this number at every next step and for an RTI.',
+  refLabel:'Complaint / reference number',refDate:'Date',refSave:'Save on this phone',refSaved:'Saved on this phone',refDel:'Delete',refNeed:'Enter the number first',
+  refPrivacy:'Stays only in this phone\'s browser. Never sent anywhere.',refNoStore:'This browser does not allow saving. Take a photo of the number or write it down.',
+  yourNo:'Your complaint number',quote:'Quote your complaint number at every step.',
   waits:['Today','After 7 days','After 15 days','After 30 days','After 45 days','After 60 days'],waitNote:'Waiting times are suggestions, not rules.',
   mp:'MP',mla:'MLA',nameMissing:'name not added yet',councillor:'Ward councillor',councillorMissing:'not added yet',voter:'Your voter slip shows your assembly constituency — that tells you your MLA.',
-  foot:['Numbers change. Confirm anything marked “check” before relying on it.','Nothing you type leaves your phone.','Open data. NGOs and anyone can use and improve it for free.'],
+  foot:['This app never sends a complaint to the government. It helps you prepare one and reach the right office.','Numbers change. Confirm anything marked “check” before relying on it.','Nothing you type leaves your phone.','Open data. NGOs and anyone can use and improve it for free.'],
   sos:'In an emergency, call 112 first.',helpline:'Helpline',power:'Electricity complaint (all DISCOMs)',police:'Police',center:'Central Government',write2:'Send a written complaint to'}
 };
 
@@ -237,7 +284,7 @@ const ICON={
 };
 const svg=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[k]||''}</svg>`;
 
-const S={lang:'en',view:'city',city:null,prob:null,q:'',loc:'',since:'',det:'',name:'',stamped:false};
+const S={lang:'en',view:'city',city:null,prob:null,q:'',loc:'',since:'',det:'',name:'',draft:'draft'};
 let last=null;
 try{const s=JSON.parse(localStorage.getItem('jawabdeh3')||'{}');if(s.lang)S.lang=s.lang;if(s.city)last=s.city}catch(e){}
 const save=()=>{try{localStorage.setItem('jawabdeh3',JSON.stringify({lang:S.lang,city:S.city||last}))}catch(e){}};
@@ -341,18 +388,14 @@ function vResult(){
     ...r.mlas.map(m=>`<div class="rep"><span class="s">${t('mla')} · ${esc(m.seat)}${m.name&&r.mla_status==='needs_verification'?`<span class="mark chk">${t('chk')}</span>`:''}</span><span class="n ${m.name?'':'empty'}">${esc(m.name||t('nameMissing'))}</span></div>`),
     `<div class="rep"><span class="s">${t('councillor')}</span><span class="n empty">${t('councillorMissing')}</span></div>`].join('');
   const prV=pr?(pr.type==='phone'?fmt(pr.value):pr.value):'';
+  const owa=R.list.find(x=>x.type==='phone'&&/whatsapp/i.test(x.label_en||'')&&/^[6-9]\d{9}$/.test(x.value));
   return `${trail(2)}
   <div class="head3"><span class="typed">${esc(L(c,'name'))} · ${esc(p[S.lang])}</span><span class="typed">${t('resp')}:</span>
     <h1 class="office">${esc(R.who)}</h1><span class="dept">${esc(R.dept)}</span></div>
   ${R.notes.map(n=>`<div class="alert ${n.cls}">${esc(n.txt)}</div>`).join('')}
 
-  <div class="section-t"><b>01</b><h2>${t('firstH')}</h2></div>
-  ${pr?`<div class="call"><span class="lbl">${esc(L(pr,'label'))}${pr.status==='verified'?`<span class="mark ok">${t('ok')}</span>`:`<span class="mark chk">${t('chk')}</span>`}</span>
-    <span class="num">${esc(prV)}</span>
-    <div class="row">${pr.type==='phone'?`<a class="cbtn red" href="tel:${esc(pr.value)}">${t('call')}</a><button class="cbtn ghost" type="button" data-copy="${esc(pr.value)}">${t('copy')}</button>`:
-      `<a class="cbtn red" href="https://${esc(pr.value.replace(/^https?:\/\//,''))}" target="_blank" rel="noopener">${t('visit')}</a>`}</div></div>`:''}
-
-  <div class="section-t"><b>02</b><h2>${t('writeH')}</h2></div>
+  <div class="section-t"><b>01</b><h2>${t('prepH')}</h2></div>
+  <div class="status" id="status" role="status" aria-live="polite" data-s="${statusKey()}">${esc(statusText())}</div>
   <div class="letterwrap"><div class="letter unfold" id="letter">
     <div class="stamp" id="stamp" aria-hidden="true"><div>${t('stampTop')}<b>${t('stamp')}</b>${new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}).toUpperCase()}</div></div>
     <div class="t to">${t('to')}\n${esc(R.dept)}\n${esc(R.who)}, ${esc(L(c,'name'))}</div>
@@ -365,14 +408,40 @@ function vResult(){
     <div>${t('ask')}</div>
     <div>${t('sign')}: <input class="blank" id="f-name" size="14" value="${esc(S.name)}" placeholder="…"></div>
   </div></div>
-  <div class="sendrow"><a class="cbtn red" id="wa" target="_blank" rel="noopener">${t('wa')}</a><button class="cbtn line" type="button" id="cp">${t('cp')}</button></div>
+  <div class="sendrow"><button class="cbtn red" type="button" id="cp">${t('cp')}</button><a class="cbtn line" id="wa" target="_blank" rel="noopener">${t('wa')}</a></div>
+  <p class="hint">${t('waHint')}</p>
 
-  <div class="section-t"><b>03</b><h2>${t('routeH')}</h2></div>
+  <div class="section-t"><b>02</b><h2>${t('submitH')}</h2></div>
+  <div class="truth">${t('truth')}</div>
+  ${pr?`<div class="call"><span class="lbl">${esc(L(pr,'label'))}${pr.status==='verified'?`<span class="mark ok">${t('ok')}</span>`:`<span class="mark chk">${t('chk')}</span>`}</span>
+    <span class="num">${esc(prV)}</span>
+    <div class="row">${pr.type==='phone'?`<a class="cbtn red" href="tel:${esc(pr.value)}">${t('call')}</a><button class="cbtn ghost" type="button" data-copy="${esc(pr.value)}">${t('copy')}</button>`:
+      pr.value?`<a class="cbtn red" href="https://${esc(pr.value.replace(/^https?:\/\//,''))}" target="_blank" rel="noopener">${t('visit')}</a>`:''}</div></div>`:''}
+  ${pr?`<ol class="howto">${(t('how_'+(pr.type in {phone:1,web:1,app:1,in_person:1}?pr.type:'web'))).map(x=>`<li>${esc(x)}</li>`).join('')}</ol>`:''}
+  ${owa?`<div class="sendrow"><a class="cbtn ink" id="owa" target="_blank" rel="noopener" href="${esc(waLink(owa.value,letterText()))}">${t('officialWa')} · ${esc(fmt(owa.value))}</a></div>
+    <p class="hint">${t('officialWaHint')}${owa.status==='verified'?'':` <span class="mark chk">${t('chk')}</span>`}</p>`:''}
+  ${others.length?`<details><summary>${t('other')}</summary><ul class="ways">${others.map(wayHTML).join('')}</ul><div style="height:10px"></div></details>`:''}
+
+  <div class="section-t"><b>03</b><h2>${t('saveH')}</h2></div>
+  <p class="hint" style="font-weight:700;color:var(--ink)">${t('refWhere')}</p>
+  <ul class="where-list">${t('refWhereList').map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+  <p class="hint">${t('refKeep')}</p>
+  <form class="refbox" id="refform" autocomplete="off" novalidate>
+    <div class="refrow">
+      <div><label for="f-ref">${t('refLabel')}</label><input id="f-ref" maxlength="40" inputmode="text" placeholder="e.g. 2026/12345"></div>
+      <div><label for="f-refdate">${t('refDate')}</label><input id="f-refdate" type="date" value="${todayISO()}"></div>
+    </div>
+    <button class="cbtn ink" type="submit" id="refsave">${t('refSave')}</button>
+    <ul class="refs" id="refs">${refsHTML(c.id,p.id)}</ul>
+    <p class="hint">${storageOK()?t('refPrivacy'):t('refNoStore')}</p>
+  </form>
+
+  <div class="section-t"><b>04</b><h2>${t('routeH')}</h2></div>
+  <p class="hint" id="quote" style="font-weight:700;color:var(--red)">${quoteHTML(c.id,p.id)}</p>
   <ol class="route">${stepsHTML}</ol>
   <p class="small">${t('waitNote')}</p>
 
   <div class="sendrow"><a class="cbtn line" id="share-wa" target="_blank" rel="noopener">${t('shareWa')}</a><button class="cbtn line" type="button" id="share">${t('share')}</button></div>
-  ${others.length?`<details><summary>${t('other')}</summary><ul class="ways">${others.map(wayHTML).join('')}</ul><div style="height:10px"></div></details>`:''}
   <details><summary>${t('reps')}</summary><div class="reps">${repRows}</div>${r.mla_note_en?`<p class="small">${esc(L(r,'mla_note'))}</p>`:''}<p class="small">${t('voter')}</p></details>`;
 }
 
@@ -405,7 +474,25 @@ ${S.det?S.det+'\n':''}Kindly take action soon and share the complaint number.
 Name: ${S.name||''}
 Date: ${new Date().toLocaleDateString('en-IN')}`}
 
+/* Complaint status. Only a complaint number the citizen records counts as "recorded";
+   copying or sharing the draft never moves the status past "ready to send". */
+function statusKey(){const r=S.city&&S.prob?latestRef(S.city,S.prob):null;return r?'recorded':(S.draft||'draft')}
+function statusText(){const k=statusKey();return k==='recorded'?t('st_recorded')(latestRef(S.city,S.prob).ref):t('st_'+k)}
+function setDraft(state){if(S.draft==='shared'&&state==='copied')return;S.draft=state;const el=$('status');if(el){el.dataset.s=statusKey();el.textContent=statusText()}}
+const REFKEY='jawabdeh-refs';
+function storageOK(){try{localStorage.setItem('__jd','1');localStorage.removeItem('__jd');return true}catch(e){return false}}
+function loadRefs(){try{const a=JSON.parse(localStorage.getItem(REFKEY)||'[]');return Array.isArray(a)?a:[]}catch(e){return []}}
+function storeRefs(a){try{localStorage.setItem(REFKEY,JSON.stringify(a));return true}catch(e){return false}}
+function refsFor(city,prob){return loadRefs().filter(r=>r.city===city&&r.prob===prob)}
+function latestRef(city,prob){const a=refsFor(city,prob);return a.length?a[a.length-1]:null}
+function todayISO(){const d=new Date();return new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)}
+function refsHTML(city,prob){return refsFor(city,prob).map(r=>`<li><span><span class="no">${esc(r.ref)}</span> · ${esc(niceDate(r.date))}</span><button class="sbtn" type="button" data-delref="${esc(r.id)}">${t('refDel')}</button></li>`).join('')}
+function quoteHTML(city,prob){const r=latestRef(city,prob);return t('quote')+(r?` ${t('yourNo')}: <span style="font-family:var(--type)">${esc(r.ref)}</span>`:'')}
+function niceDate(iso){const d=new Date(iso+'T00:00:00');return isNaN(d)?iso:d.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}
+function refreshRefs(){const c=S.city,p=S.prob;const ul=$('refs');if(ul)ul.innerHTML=refsHTML(c,p);const q=$('quote');if(q)q.innerHTML=quoteHTML(c,p);setDraft(S.draft||'draft')}
+function waLink(num,text){return 'https://wa.me/91'+num+'?text='+encodeURIComponent(text)}
 function syncWa(){const a=$('wa');if(a)a.href='https://wa.me/?text='+encodeURIComponent(letterText());
+  const o=$('owa');if(o){const n=o.href.match(/wa\.me\/91(\d{10})/);if(n)o.href=waLink(n[1],letterText())}
   const g=$('share-wa');if(g)g.href='https://wa.me/?text='+encodeURIComponent(guideText())}
 function guideText(){
   const c=cityById(S.city),p=DATA.problems.problems.find(x=>x.id===S.prob),R=route(c,p);
@@ -434,20 +521,21 @@ window.addEventListener('popstate',e=>{const st=e.state;if(!st){go('city',true);
 try{history.replaceState({v:'city'},'')}catch(e){}
 
 let tt;function toast(m){const e=$('toast');e.textContent=m;e.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('on'),1700)}
-async function copy(txt){try{await navigator.clipboard.writeText(txt);toast(t('copied'));return true}
+async function copy(txt,msg){try{await navigator.clipboard.writeText(txt);toast(msg||t('copied'));return true}
   catch(e){const box=$('manual'),ta=$('manual-text');ta.value=txt;box.hidden=false;ta.focus();ta.select();toast(t('copyFail'));return false}}
 function stamp(){const s=$('stamp'),l=$('letter');if(!s)return;s.classList.remove('hit');l.classList.remove('press','unfold');void s.offsetWidth;s.classList.add('hit');l.classList.add('press')}
 
 document.addEventListener('click',e=>{
-  const a=e.target.closest('#wa');if(a){stamp();return}
+  const a=e.target.closest('#wa,#owa');if(a){setDraft('shared');stamp();return}
   const b=e.target.closest('button');if(!b)return;
   if(b.id==='lang'){S.lang=S.lang==='hi'?'en':'hi';save();render()}
   else if(b.id==='back'){if(history.state&&history.state.v&&history.state.v!=='city')history.back();else go(S.view==='result'?'prob':'city')}
   else if(b.dataset.city){S.city=b.dataset.city;last=S.city;S.q='';save();go('prob')}
   else if(b.dataset.go){go(b.dataset.go)}
-  else if(b.dataset.prob){S.prob=b.dataset.prob;go('result')}
+  else if(b.dataset.prob){S.prob=b.dataset.prob;S.draft='draft';go('result')}
   else if(b.dataset.copy){copy(b.dataset.copy)}
-  else if(b.id==='cp'){copy(letterText()).then(ok=>ok&&stamp())}
+  else if(b.id==='cp'){copy(letterText(),t('st_copied')).then(ok=>{if(ok){setDraft('copied');stamp()}})}
+  else if(b.dataset.delref){storeRefs(loadRefs().filter(r=>r.id!==b.dataset.delref));refreshRefs()}
   else if(b.id==='manual-close'){$('manual').hidden=true}
   else if(b.id==='share'){copy(guideText())}
 });
@@ -455,7 +543,14 @@ document.addEventListener('input',e=>{
   if(e.target.id==='q'){S.q=e.target.value;
     const st=$('states');const tmp=document.createElement('div');tmp.innerHTML=vCity();st.replaceWith(tmp.querySelector('#states'));
     const rc=document.querySelector('.recent');if(rc)rc.hidden=!!S.q.trim();return}
-  const k={'f-loc':'loc','f-since':'since','f-det':'det','f-name':'name'}[e.target.id];if(k){S[k]=e.target.value.trim();syncWa()}
+  const k={'f-loc':'loc','f-since':'since','f-det':'det','f-name':'name'}[e.target.id];if(k){S[k]=e.target.value.trim();syncWa();if(S.draft==='copied')setDraft('draft')}
+});
+document.addEventListener('submit',e=>{
+  if(e.target.id!=='refform')return;e.preventDefault();
+  const ref=($('f-ref').value||'').trim().slice(0,40),date=$('f-refdate').value||todayISO();
+  if(!ref){toast(t('refNeed'));$('f-ref').focus();return}
+  const a=loadRefs();a.push({id:Date.now().toString(36),city:S.city,prob:S.prob,ref,date});
+  if(storeRefs(a)){toast(t('refSaved'));$('f-ref').value='';refreshRefs()}else toast(t('refNoStore'));
 });
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='q'){const f=document.querySelector('#states .city');if(f)f.click()}});
 render();
