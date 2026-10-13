@@ -1,0 +1,76 @@
+{
+  "id": "varanasi",
+  "name_en": "Varanasi",
+  "name_hi": "वाराणसी",
+  "state": "up",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Varanasi Nagar Nigam",
+    "name_hi": "वाराणसी नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "1533",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "verified",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-varanasi-nagar-nigam/1781"
+      },
+      {
+        "type": "phone",
+        "value": "18001805567",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-varanasi-nagar-nigam/1781"
+      },
+      {
+        "type": "phone",
+        "value": "05422720005",
+        "label_en": "Complaint registration",
+        "label_hi": "शिकायत दर्ज",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-varanasi-nagar-nigam/1781"
+      },
+      {
+        "type": "web",
+        "value": "nnvns.org.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ],
+    "escalation": "Public Grievance Cell, Varanasi Nagar Nigam, Sigra, Varanasi 221002"
+  },
+  "discom": {
+    "name_en": "Purvanchal Vidyut Vitran Nigam (PuVVNL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Narendra Modi",
+        "seat": "Varanasi"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Varanasi North",
+        "name": "Ravindra Jaiswal"
+      },
+      {
+        "seat": "Varanasi South",
+        "name": "Neelkanth Tiwari"
+      },
+      {
+        "seat": "Varanasi Cantt.",
+        "name": "Saurabh Srivastava"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Varanasi_Lok_Sabha_constituency"
+  },
+  "geo": [
+    25.32,
+    82.97
+  ]
+}

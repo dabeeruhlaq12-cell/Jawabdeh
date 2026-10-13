@@ -1,0 +1,84 @@
+{
+  "id": "thiruvananthapuram",
+  "name_en": "Thiruvananthapuram",
+  "name_hi": "तिरुवनंतपुरम",
+  "state": "kl",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Thiruvananthapuram Corporation",
+    "name_hi": "तिरुवनंतपुरम नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "04712377700",
+        "label_en": "General helpline (24×7)",
+        "label_hi": "सामान्य हेल्पलाइन (24×7)",
+        "status": "verified",
+        "source": "https://smarttvm.tmc.lsgkerala.gov.in/default/index/contactus"
+      },
+      {
+        "type": "phone",
+        "value": "9496434488",
+        "label_en": "Water / septage help desk",
+        "label_hi": "पानी / सेप्टेज हेल्प डेस्क",
+        "status": "verified",
+        "source": "https://smarttvm.tmc.lsgkerala.gov.in/default/index/contactus"
+      },
+      {
+        "type": "phone",
+        "value": "9447060134",
+        "label_en": "Streetlights",
+        "label_hi": "स्ट्रीटलाइट",
+        "status": "verified",
+        "source": "https://smarttvm.tmc.lsgkerala.gov.in/default/index/contactus"
+      },
+      {
+        "type": "web",
+        "value": "smarttvm.tmc.lsgkerala.gov.in",
+        "label_en": "Online complaint (gives tracking number)",
+        "label_hi": "ऑनलाइन शिकायत (ट्रैकिंग नंबर मिलता है)",
+        "status": "verified",
+        "source": "https://smarttvm.tmc.lsgkerala.gov.in/default/index/contactus"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "Kerala State Electricity Board (KSEB)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Shashi Tharoor",
+        "seat": "Thiruvananthapuram"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Kazhakootam",
+        "name": "V. Muraleedharan"
+      },
+      {
+        "seat": "Vattiyoorkavu",
+        "name": "K. Muraleedharan"
+      },
+      {
+        "seat": "Thiruvananthapuram",
+        "name": "C. P. John"
+      },
+      {
+        "seat": "Nemom",
+        "name": "Rajeev Chandrasekhar"
+      },
+      {
+        "seat": "Kovalam",
+        "name": "M. Vincent"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/2026_Kerala_Legislative_Assembly_election"
+  },
+  "geo": [
+    8.52,
+    76.94
+  ]
+}

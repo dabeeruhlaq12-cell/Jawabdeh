@@ -1,0 +1,56 @@
+{
+  "id": "raipur",
+  "name_en": "Raipur",
+  "name_hi": "रायपुर",
+  "state": "cg",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Raipur Municipal Corporation",
+    "name_hi": "रायपुर नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "07712535790",
+        "label_en": "Citizen helpline",
+        "label_hi": "नागरिक हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://www.indiacustomercare.com/raipur-municipal-corporation-rmc-contact-no"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "CG State Power Distribution Co. (CSPDCL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Brijmohan Agrawal",
+        "seat": "Raipur"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Raipur City West",
+        "name": "Rajesh Munat"
+      },
+      {
+        "seat": "Raipur City North",
+        "name": "Purandar Mishra"
+      },
+      {
+        "seat": "Raipur City South",
+        "name": "Sunil Kumar Soni"
+      },
+      {
+        "seat": "Raipur Rural",
+        "name": "Motilal Sahu"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Raipur_Lok_Sabha_constituency"
+  },
+  "geo": [
+    21.25,
+    81.63
+  ]
+}

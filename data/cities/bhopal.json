@@ -1,0 +1,88 @@
+{
+  "id": "bhopal",
+  "name_en": "Bhopal",
+  "name_hi": "भोपाल",
+  "state": "mp",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Bhopal Municipal Corporation",
+    "name_hi": "भोपाल नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "155304",
+        "label_en": "Citizen helpline",
+        "label_hi": "नागरिक हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-bhopal-municipal-corporation-bmc/1788"
+      },
+      {
+        "type": "phone",
+        "value": "18002330014",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-bhopal-municipal-corporation-bmc/1788"
+      },
+      {
+        "type": "phone",
+        "value": "9424401548",
+        "label_en": "WhatsApp complaints",
+        "label_hi": "WhatsApp पर शिकायत",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-bhopal-municipal-corporation-bmc/1788"
+      },
+      {
+        "type": "web",
+        "value": "bmconline.gov.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ],
+    "escalation": "Municipal Commissioner, Public Grievance Cell, BMC HQ, ISBT Campus, Dr. Ambedkar Marg, Bhopal 462023"
+  },
+  "discom": {
+    "name_en": "MP Madhya Kshetra Vidyut Vitaran Co. (Central DISCOM)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Alok Sharma",
+        "seat": "Bhopal"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Bhopal Uttar",
+        "name": "Atif Arif Aqueel"
+      },
+      {
+        "seat": "Narela",
+        "name": "Vishvas Sarang"
+      },
+      {
+        "seat": "Bhopal Dakshin-Paschim",
+        "name": "Bhagwandas Sabnani"
+      },
+      {
+        "seat": "Bhopal Madhya",
+        "name": "Arif Masood"
+      },
+      {
+        "seat": "Govindpura",
+        "name": "Krishna Gaur"
+      },
+      {
+        "seat": "Huzur",
+        "name": "Rameshwar Sharma"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Bhopal_Lok_Sabha_constituency"
+  },
+  "geo": [
+    23.26,
+    77.41
+  ]
+}

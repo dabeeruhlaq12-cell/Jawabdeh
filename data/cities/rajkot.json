@@ -1,0 +1,72 @@
+{
+  "id": "rajkot",
+  "name_en": "Rajkot",
+  "name_hi": "राजकोट",
+  "state": "gj",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Rajkot Municipal Corporation",
+    "name_hi": "राजकोट नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "18001231973",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-rajkot-municipal-corporation-rmc/1642"
+      },
+      {
+        "type": "phone",
+        "value": "9512301973",
+        "label_en": "WhatsApp complaints",
+        "label_hi": "WhatsApp पर शिकायत",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-rajkot-municipal-corporation-rmc/1642"
+      },
+      {
+        "type": "web",
+        "value": "rmc.gov.in/ComplaintRegistration",
+        "label_en": "Online complaint",
+        "label_hi": "ऑनलाइन शिकायत",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-rajkot-municipal-corporation-rmc/1642"
+      }
+    ],
+    "escalation": "Municipal Commissioner, Rajkot Municipal Corporation, Dhebarbhai Main Road, Rajkot 360001"
+  },
+  "discom": {
+    "name_en": "PGVCL (Paschim Gujarat Vij Co.)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Parshottam Rupala",
+        "seat": "Rajkot"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Rajkot East",
+        "name": "Uday Kangad"
+      },
+      {
+        "seat": "Rajkot West",
+        "name": "Darshita Shah"
+      },
+      {
+        "seat": "Rajkot South",
+        "name": "Ramesh Tilala"
+      },
+      {
+        "seat": "Rajkot Rural",
+        "name": "Bhanuben Babariya"
+      }
+    ],
+    "mla_status": "needs_verification"
+  },
+  "geo": [
+    22.3,
+    70.8
+  ]
+}

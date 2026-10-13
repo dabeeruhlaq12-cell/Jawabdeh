@@ -1,0 +1,454 @@
+<title>Jawabdeh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Khand:wght@600;700&family=Mukta:wght@400;500;700&family=Courier+Prime:wght@400;700&family=Kalam:wght@400&display=swap">
+<style>
+/* Layout: a phone-width app, one question per screen (city → problem → what to do).
+   Identity: India Post inland letter — pale blue lined card, post-office red, blue-black ink,
+   typewriter text for official parts, handwriting for what the citizen writes, a rubber stamp when it is sent. */
+:root{
+  --bg:#E9EEF2; --paper:#F7F9FB; --inland:#D3E4F1; --inland-line:#A9C3D9;
+  --ink:#16213D; --ink-2:#4A5672; --red:#C8102E; --red-soft:#F6D9DD; --rule:#C9D3DC; --ok:#1E6B45; --warn:#9A5B00;
+  --display:"Khand","Mukta",system-ui,sans-serif;
+  --body:"Mukta","Noto Sans Devanagari",system-ui,sans-serif;
+  --type:"Courier Prime","Courier New",ui-monospace,monospace;
+  --hand:"Kalam","Mukta",cursive;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1424; --paper:#141D31; --inland:#1B2B47; --inland-line:#31486D;
+  --ink:#E8EDF7; --ink-2:#9DA9C2; --red:#FF5468; --red-soft:#3A1822; --rule:#2A3550; --ok:#7CD6A3; --warn:#F0BE62; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1424; --paper:#141D31; --inland:#1B2B47; --inland-line:#31486D;
+  --ink:#E8EDF7; --ink-2:#9DA9C2; --red:#FF5468; --red-soft:#3A1822; --rule:#2A3550; --ok:#7CD6A3; --warn:#F0BE62; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{min-height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;padding-inline:16px;padding-block:0 48px}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--red);outline-offset:2px;border-radius:6px}
+.app{max-width:540px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+
+/* masthead: a red postal band */
+.mast{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;margin-inline:-16px;padding:10px 16px;background:var(--bg);
+  display:flex;align-items:center;gap:10px;border-bottom:3px solid var(--red)}
+.back{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--ink)}
+.back[hidden]{display:none}
+.wordmark{font-family:var(--display);font-weight:700;font-size:1.65rem;line-height:1;letter-spacing:.01em;display:flex;align-items:baseline;gap:8px;margin-right:auto}
+.wordmark i{font-style:normal;color:var(--red)}
+.wordmark small{font-family:var(--type);font-size:.7rem;color:var(--ink-2);letter-spacing:.06em}
+.lang{font-family:var(--type);font-weight:700;font-size:.85rem;border:2px solid var(--ink);border-radius:999px;padding:6px 12px}
+
+/* progress as postmark dots */
+.trail{display:flex;align-items:center;gap:8px;font-family:var(--type);font-size:.8rem;color:var(--ink-2)}
+.trail b{width:26px;height:26px;border-radius:50%;border:2px dashed var(--ink-2);display:grid;place-items:center;font-size:.8rem}
+.trail b.on{border-style:solid;border-color:var(--red);color:var(--red)}
+.trail b.done{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.trail span{flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--ink-2) 0 6px,transparent 6px 11px)}
+
+.q{font-family:var(--display);font-weight:600;font-size:clamp(2.1rem,9vw,2.9rem);line-height:1.02;margin:6px 0 0;text-wrap:balance}
+.q em{font-style:normal;color:var(--red)}
+.sub{margin:0;color:var(--ink-2)}
+
+/* step 1 */
+.find{display:flex;align-items:center;gap:10px;background:var(--paper);border:2px solid var(--ink);border-radius:14px;padding:0 14px;box-shadow:4px 4px 0 var(--ink)}
+.find{margin-bottom:6px}
+@media (max-width:440px){.wordmark small{display:none}}
+.find input{border:0;outline:none;background:none;font:inherit;font-size:1.1rem;padding:15px 0;width:100%;color:var(--ink)}
+.recent{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:14px;background:var(--ink);color:var(--paper);text-align:left}
+.recent b{font-family:var(--display);font-size:1.5rem;font-weight:600;line-height:1}
+.recent span{font-size:.85rem;opacity:.75}
+.states{display:flex;flex-direction:column;gap:14px}
+.state h3{margin:0 0 6px;font-family:var(--type);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.city{text-align:left;padding:12px 14px;border-radius:12px;background:var(--paper);border:1.5px solid var(--rule);font-weight:500;min-height:52px}
+.city:hover{border-color:var(--ink)}
+.none{color:var(--ink-2);font-family:var(--hand);font-size:1.1rem}
+
+/* step 2 */
+.where{font-family:var(--type);font-size:.9rem;color:var(--ink-2)}
+.where b{color:var(--ink)}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tile{display:flex;flex-direction:column;justify-content:space-between;gap:14px;text-align:left;padding:14px;min-height:118px;border-radius:16px;background:var(--paper);
+  border:1.5px solid var(--rule);transition:transform .15s,box-shadow .15s,border-color .15s}
+.tile:hover{border-color:var(--ink);transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.tile svg{width:34px;height:34px}
+.tile span{font-weight:500;line-height:1.25}
+.tile.wide{grid-column:1/-1;flex-direction:row;align-items:center;min-height:0}
+.tile.sos{background:var(--red-soft);border-color:var(--red)}
+
+/* step 3 */
+.head3{display:flex;flex-direction:column;gap:6px}
+.typed{font-family:var(--type);font-size:.92rem;color:var(--ink-2)}
+.office{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,7.5vw,2.4rem);line-height:1.05;margin:0}
+.dept{font-family:var(--type);font-size:.92rem}
+.alert{border-left:4px solid var(--red);background:var(--paper);padding:10px 14px;border-radius:0 10px 10px 0;font-size:.95rem}
+.alert.sos{background:var(--red);color:#fff;border-left-color:var(--ink);font-weight:700}
+
+.section-t{display:flex;align-items:baseline;gap:10px;margin:8px 0 0}
+.section-t b{font-family:var(--type);font-weight:700;font-size:.8rem;color:var(--red);letter-spacing:.06em}
+.section-t h2{margin:0;font-family:var(--display);font-weight:600;font-size:1.6rem;line-height:1.1}
+
+.call{display:flex;flex-direction:column;gap:12px;background:var(--ink);color:var(--paper);border-radius:18px;padding:18px}
+.call .lbl{font-size:.92rem;opacity:.85}
+.call .num{font-family:var(--type);font-weight:700;font-size:clamp(1.8rem,9vw,2.4rem);line-height:1;letter-spacing:.02em;overflow-wrap:anywhere}
+.call .row{display:flex;gap:8px;flex-wrap:wrap}
+.cbtn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:12px;font-weight:700;text-decoration:none;min-height:48px}
+.cbtn.red{background:var(--red);color:#fff}
+.cbtn.ghost{border:2px solid currentColor;color:inherit}
+.cbtn.ink{background:var(--ink);color:var(--paper)}
+.cbtn.line{border:2px solid var(--ink);color:var(--ink)}
+.mark{font-family:var(--type);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:4px;border:1.5px solid currentColor;margin-left:6px;vertical-align:2px;white-space:nowrap}
+.mark.ok{color:var(--ok)} .mark.chk{color:var(--warn)}
+.call .mark.ok{color:#9BE2B9} .call .mark.chk{color:#FFD58A}
+
+/* the inland letter */
+.letterwrap{perspective:1200px}
+.letter{position:relative;background:var(--inland);border-radius:6px;padding:22px 18px 20px;color:var(--ink);
+  background-image:repeating-linear-gradient(180deg,transparent 0 33px,var(--inland-line) 33px 34px);background-position:0 18px;
+  box-shadow:0 1px 0 var(--inland-line),0 18px 30px -18px rgba(22,33,61,.45);transform-origin:top center;line-height:34px}
+.letter::before{content:"";position:absolute;inset:0 0 auto;height:6px;background:repeating-linear-gradient(90deg,var(--red) 0 14px,transparent 14px 20px,var(--ink) 20px 34px,transparent 34px 40px);border-radius:6px 6px 0 0}
+@media (prefers-reduced-motion:no-preference){.letter.unfold{animation:unfold .7s cubic-bezier(.2,.8,.2,1)}}
+@keyframes unfold{from{transform:rotateX(-78deg);opacity:.3}to{transform:none;opacity:1}}
+.letter .t{font-family:var(--type);font-size:.95rem}
+.letter .to{white-space:pre-line}
+.letter .subj{font-family:var(--type);font-weight:700}
+.blank{font-family:var(--hand);font-size:1.15rem;color:var(--red);background:transparent;border:0;border-bottom:2px dotted var(--ink-2);
+  padding:0 4px;min-width:6ch;max-width:100%;outline:none;line-height:1.4}
+.blank::placeholder{color:var(--ink-2);opacity:.75}
+textarea.blank{display:block;width:100%;resize:vertical;min-height:68px;border:2px dotted var(--ink-2);border-radius:6px;margin-top:6px;line-height:1.5}
+.stamp{position:absolute;right:14px;top:16px;width:104px;height:104px;border-radius:50%;border:3px solid var(--red);color:var(--red);
+  display:grid;place-items:center;text-align:center;font-family:var(--type);font-weight:700;font-size:.62rem;line-height:1.2;letter-spacing:.05em;
+  transform:rotate(-14deg);opacity:0;pointer-events:none;filter:url(#rough);mix-blend-mode:multiply}
+.stamp::before{content:"";position:absolute;inset:6px;border-radius:50%;border:1.5px dashed var(--red)}
+.stamp b{font-family:var(--display);font-size:1.25rem;letter-spacing:0;display:block}
+:root[data-theme="dark"] .stamp{mix-blend-mode:normal}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .stamp{mix-blend-mode:normal}}
+.stamp.hit{opacity:.92}
+@media (prefers-reduced-motion:no-preference){.stamp.hit{animation:stamp .55s cubic-bezier(.3,1.4,.5,1)}.letter.press{animation:press .35s ease-out .12s}}
+@keyframes stamp{0%{opacity:0;transform:translate(30px,-60px) rotate(-40deg) scale(2.4)}60%{opacity:.95;transform:rotate(-12deg) scale(.94)}100%{opacity:.92;transform:rotate(-14deg) scale(1)}}
+@keyframes press{50%{transform:rotateX(6deg) scale(.99)}}
+.sendrow{display:flex;gap:8px;flex-wrap:wrap}
+
+/* other ways */
+.ways{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.way{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:12px 0;border-bottom:1.5px dashed var(--rule)}
+.way .v{font-family:var(--type);font-weight:700;font-size:1.05rem;overflow-wrap:anywhere}
+.way .l{font-size:.9rem;color:var(--ink-2);grid-column:1}
+.way .act{grid-row:1/3;grid-column:2;display:flex;gap:6px}
+.sbtn{font-family:var(--type);font-weight:700;font-size:.8rem;padding:8px 10px;border-radius:8px;border:1.5px solid var(--ink);min-height:40px;display:inline-flex;align-items:center;text-decoration:none;color:var(--ink)}
+
+/* escalation as a postal route with waiting times */
+.route{list-style:none;margin:0;padding:0;position:relative}
+.route::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:2px;background:repeating-linear-gradient(180deg,var(--ink-2) 0 6px,transparent 6px 11px)}
+.route li{position:relative;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:8px 0}
+.pm{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:var(--bg);display:grid;place-items:center;font-family:var(--type);font-weight:700;font-size:.72rem;line-height:1;text-align:center;z-index:1}
+.route li:first-child .pm{background:var(--red);border-color:var(--red);color:#fff}
+.route .wait{font-family:var(--type);font-size:.8rem;color:var(--red);font-weight:700}
+.route .what{font-weight:500}
+.route .det{font-size:.9rem;color:var(--ink-2)}
+
+/* representatives */
+details{background:var(--paper);border:1.5px solid var(--rule);border-radius:14px;padding:4px 16px}
+summary{list-style:none;cursor:pointer;padding:12px 0;font-family:var(--display);font-weight:600;font-size:1.35rem;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--type);font-size:1.4rem;color:var(--red)}
+details[open] summary::after{content:"–"}
+.reps{display:flex;flex-direction:column;padding-bottom:12px}
+.rep{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px dashed var(--rule)}
+.rep .s{font-family:var(--type);font-size:.85rem;color:var(--ink-2)}
+.rep .n{font-weight:700;text-align:right}
+.rep .n.empty{font-weight:400;font-family:var(--hand);color:var(--ink-2)}
+.small{font-size:.88rem;color:var(--ink-2);margin:4px 0 12px}
+
+footer{font-size:.85rem;color:var(--ink-2);display:flex;flex-direction:column;gap:6px;border-top:2px solid var(--ink);padding-top:14px;margin-top:10px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:999px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
+.toast.on{opacity:1}
+.manual{position:fixed;inset:0;background:rgba(10,15,30,.55);display:grid;place-items:end center;z-index:10;padding:16px}
+.mbox{width:100%;max-width:540px;background:var(--paper);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px;margin-bottom:env(safe-area-inset-bottom,0px)}
+.mbox textarea{width:100%;min-height:220px;font-family:var(--type);font-size:.9rem;border:1.5px solid var(--rule);border-radius:10px;padding:10px;background:var(--bg);color:var(--ink)}
+@media (prefers-reduced-motion:no-preference){.view{animation:in .3s ease-out}@keyframes in{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}}
+@media (min-width:700px){body{padding-top:20px}.cgrid{grid-template-columns:repeat(3,1fr)}.tiles{grid-template-columns:repeat(3,1fr)}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter></svg>
+
+<div class="app">
+  <header class="mast">
+    <button class="back" id="back" type="button" aria-label="Back" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 5 8 12l7 7"/></svg></button>
+    <div class="wordmark"><span>जवाब<i>देह</i></span><small id="tagline"></small></div>
+    <button class="lang" id="lang" type="button"></button>
+  </header>
+  <main id="view" class="view"></main>
+  <footer id="foot"></footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="manual" id="manual" hidden><div class="mbox"><b id="manual-t"></b><textarea id="manual-text" readonly></textarea><button class="cbtn ink" type="button" id="manual-close">OK</button></div></div>
+
+<script>
+const DATA = /*__DATA__*/;
+
+const UI={
+ hi:{tag:'शिकायत · सही दफ़्तर तक',lang:'English',steps:['शहर','परेशानी','क्या करें'],
+  q1:'आप किस <em>शहर</em> में हैं?',s1:n=>n+' शहर। अपना शहर नहीं मिला? नीचे राज्य की सूची देखें।',find:'शहर या राज्य लिखें…',again:'पिछली बार',none:'यह शहर अभी नहीं जुड़ा है।',
+  q2:'क्या <em>परेशानी</em> है?',in:'शहर',change:'बदलें',
+  resp:'ज़िम्मेदार',first:'पहला कदम',firstH:'यहाँ शिकायत करें',write:'चिट्ठी',writeH:'शिकायत पत्र भरें',route:'अगर काम न हो',routeH:'एक-एक कदम ऊपर जाएँ',
+  other:'और तरीके',reps:'आपके चुने हुए प्रतिनिधि',call:'कॉल करें',copy:'कॉपी',copied:'कॉपी हो गया',copyFail:'नीचे से टेक्स्ट चुनकर कॉपी करें।',manualT:'टेक्स्ट चुनकर कॉपी करें',report:'कोई नंबर ग़लत है? हमें बताएँ',share:'ये नंबर साझा करें',shareWa:'नंबर WhatsApp पर भेजें',
+  visit:'खोलें',ok:'पुष्ट',chk:'जाँचें',noNum:'इस शहर की पुष्ट हेल्पलाइन अभी नहीं जुड़ी। नीचे राज्य का माध्यम सबसे भरोसेमंद है।',
+  to:'सेवा में,',subj:'विषय:',body1:'महोदय/महोदया,',at:'जगह',since:'कितने दिन से',more:'और क्या बताना है (वैकल्पिक)',ask:'कृपया जल्द कार्रवाई करें और शिकायत क्रमांक दें।',sign:'नाम',
+  wa:'WhatsApp पर भेजें',cp:'पत्र कॉपी करें',stamp:'दर्ज',stampTop:'जवाबदेह',
+  waits:['आज','7 दिन बाद','15 दिन बाद','30 दिन बाद','45 दिन बाद','60 दिन बाद'],waitNote:'इंतज़ार के दिन सुझाव हैं, नियम नहीं।',
+  mp:'सांसद',mla:'विधायक',nameMissing:'नाम अभी नहीं जुड़ा',councillor:'वार्ड पार्षद',councillorMissing:'अभी नहीं जुड़ा',voter:'वोटर पर्ची पर आपका विधानसभा क्षेत्र लिखा होता है — उसी से विधायक पता चलता है।',
+  foot:['नंबर बदलते रहते हैं। “जाँचें” वाली जानकारी पर भरोसा करने से पहले पुष्टि करें।','आप जो लिखते हैं, वह आपके फ़ोन से बाहर नहीं जाता।','खुला डेटा। NGO और कोई भी इसे मुफ़्त इस्तेमाल और बेहतर कर सकता है।'],
+  sos:'आपात स्थिति में पहले 112 पर कॉल करें।',helpline:'हेल्पलाइन',power:'बिजली शिकायत (सभी बिजली कंपनियाँ)',police:'पुलिस',center:'केंद्र सरकार',write2:'लिखित शिकायत यहाँ भेजें'},
+ en:{tag:'complaints · to the right office',lang:'हिंदी',steps:['City','Problem','What to do'],
+  q1:'Which <em>city</em> are you in?',s1:n=>n+' cities. Not listed? Check your state below.',find:'Type a city or state…',again:'Last time',none:'This city is not added yet.',
+  q2:'What is the <em>problem</em>?',in:'City',change:'Change',
+  resp:'Responsible',first:'Step one',firstH:'Complain here',write:'Letter',writeH:'Fill in your complaint',route:'If nothing happens',routeH:'Go up one step at a time',
+  other:'Other ways',reps:'Your elected representatives',call:'Call',copy:'Copy',copied:'Copied',copyFail:'Select the text below to copy it.',manualT:'Select and copy this text',report:'Wrong number? Tell us',share:'Copy these numbers',shareWa:'Send numbers on WhatsApp',
+  visit:'Open',ok:'verified',chk:'check',noNum:'No verified city helpline yet. The state channel below is the most reliable route.',
+  to:'To,',subj:'Subject:',body1:'Respected Sir/Madam,',at:'place',since:'for how long',more:'anything else (optional)',ask:'Kindly take action soon and share the complaint number.',sign:'Name',
+  wa:'Send on WhatsApp',cp:'Copy letter',stamp:'FILED',stampTop:'JAWABDEH',
+  waits:['Today','After 7 days','After 15 days','After 30 days','After 45 days','After 60 days'],waitNote:'Waiting times are suggestions, not rules.',
+  mp:'MP',mla:'MLA',nameMissing:'name not added yet',councillor:'Ward councillor',councillorMissing:'not added yet',voter:'Your voter slip shows your assembly constituency — that tells you your MLA.',
+  foot:['Numbers change. Confirm anything marked “check” before relying on it.','Nothing you type leaves your phone.','Open data. NGOs and anyone can use and improve it for free.'],
+  sos:'In an emergency, call 112 first.',helpline:'Helpline',power:'Electricity complaint (all DISCOMs)',police:'Police',center:'Central Government',write2:'Send a written complaint to'}
+};
+
+const ICON={
+ road:'<path d="M5 21 9.5 3M19 21 14.5 3"/><path d="M12 5v2M12 10v2" stroke-dasharray="0"/><ellipse cx="13.5" cy="17" rx="3" ry="1.5" fill="var(--red)" stroke="var(--red)"/>',
+ water:'<path d="M12 3s6.5 7.2 6.5 11.5a6.5 6.5 0 0 1-13 0C5.5 10.2 12 3 12 3z"/><path d="M9 15a3 3 0 0 0 3 3" stroke="var(--red)"/>',
+ drain:'<path d="M3 7c2 0 2 2 4.5 2S10 7 12 7s2 2 4.5 2S19 7 21 7"/><path d="M3 13c2 0 2 2 4.5 2s2.5-2 4.5-2 2 2 4.5 2 2.5-2 4.5-2" stroke="var(--red)"/><path d="M3 19h18"/>',
+ garbage:'<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6" stroke="var(--red)"/>',
+ streetlight:'<path d="M8 21V7a3 3 0 0 1 3-3h7"/><path d="M15 7h6l-1.2 3h-3.6z"/><path d="M18 12v2" stroke="var(--red)"/><path d="M5 21h6"/>',
+ power:'<path d="M13 2 5 13h6l-1 9 8-11h-6z" fill="var(--red)" fill-opacity=".18"/>',
+ stray:'<circle cx="6.5" cy="9" r="1.7"/><circle cx="12" cy="6" r="1.7"/><circle cx="17.5" cy="9" r="1.7"/><path d="M7.5 18c0-3.3 2-5.5 4.5-5.5s4.5 2.2 4.5 5.5c0 1.8-2 2-4.5 1.3-2.5.7-4.5.5-4.5-1.3z" fill="var(--red)" fill-opacity=".18"/>',
+ encroachment:'<path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M10 21v-6h4v6" stroke="var(--red)"/>',
+ noise:'<path d="M4 10v4h4l5 4V6L8 10z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11" stroke="var(--red)"/>',
+ safety:'<path d="M12 3 5 6v6c0 4 3 7.5 7 9 4-1.5 7-5 7-9V6z" fill="var(--red)" fill-opacity=".14"/><path d="M12 8v5M12 16v.5" stroke="var(--red)"/>',
+ ration:'<path d="M6 8h12l-1 12H7z"/><path d="M9 8a3 3 0 0 1 6 0"/><path d="M9.5 13h5" stroke="var(--red)"/>',
+ central:'<path d="M3 21h18M4 10h16M12 3l9 5H3z"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8" stroke="var(--red)"/>'
+};
+const svg=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[k]||''}</svg>`;
+
+const S={lang:'en',view:'city',city:null,prob:null,q:'',loc:'',since:'',det:'',name:'',stamped:false};
+let last=null;
+try{const s=JSON.parse(localStorage.getItem('jawabdeh3')||'{}');if(s.lang)S.lang=s.lang;if(s.city)last=s.city}catch(e){}
+const save=()=>{try{localStorage.setItem('jawabdeh3',JSON.stringify({lang:S.lang,city:S.city||last}))}catch(e){}};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const t=k=>UI[S.lang][k];
+const L=(o,k)=>o?.[k+'_'+S.lang]??o?.[k+'_en']??'';
+const cityById=id=>DATA.cities.find(c=>c.id===id);
+const NAT=id=>DATA.national.channels.find(c=>c.id===id);
+const fmt=v=>{const d=String(v);if(!/^\d+$/.test(d))return d;
+  if(d.startsWith('1800'))return d.replace(/^(1800)(\d{3})(\d+)$/,'$1 $2 $3');
+  if(d.length===10&&/^[6-9]/.test(d))return d.slice(0,5)+' '+d.slice(5);
+  if(d.length===11&&d[0]==='0')return d.slice(0,4)+' '+d.slice(4);return d};
+
+/* ---------- who handles it, and through which channels ---------- */
+function route(city,p){
+  const st=DATA.states[city.state],muni=city.municipal;
+  const nat=ids=>ids.map(NAT).filter(Boolean).map(c=>({...c,status:'verified'}));
+  let who=L(muni,'name'),list=[],notes=[],primary=null;
+  if(p.body==='municipal'||p.body==='water'){
+    let city_=[...(muni.channels||[])];
+    if(p.body==='water'&&city.water){who=L(city.water,'name');city_=[...city.water.channels,...city_]}
+    (st.municipal_shared||[]).forEach(c=>{if(!city_.some(x=>x.value===c.value))city_.unshift(c)});
+    if(city.dev_authority)city_=city_.concat(city.dev_authority.channels);
+    if(!city_.some(c=>c.type==='phone'))notes.push({cls:'',txt:t('noNum')});
+    list=[...city_,...st.grievance.channels];
+    primary=city_.find(c=>c.type==='phone')||st.grievance.channels.find(c=>c.type==='phone')||st.grievance.channels[0];
+    if(p.id==='road')list.push(...nat(['nhai']));
+  }else if(p.body==='discom'){
+    who=city.discom.name_en;
+    list=[{type:'phone',value:'1912',label_en:UI.en.power,label_hi:UI.hi.power,status:'verified'},...st.grievance.channels];
+  }else if(p.body==='police'){
+    who=t('police');list=[...nat(['emergency','women','cyber','child']),...st.grievance.channels];
+  }else if(p.body==='state'){
+    who=L(st.grievance,'name');list=[...st.grievance.channels,...nat(['cpgrams'])];
+  }else{
+    who=t('center');list=nat(['cpgrams','rail','rti']);
+  }
+  if(p.id==='safety')notes.unshift({cls:'sos',txt:t('sos')});
+  if(p['caveat_'+S.lang])notes.push({cls:'',txt:p['caveat_'+S.lang]});
+  primary=primary||list[0];
+  return {who,dept:p['dept_'+S.lang],list,primary,notes,st};
+}
+
+/* ---------- views ---------- */
+function trail(n){return `<div class="trail">${t('steps').map((s,i)=>`${i?'<span></span>':''}<b class="${i<n?'done':i===n?'on':''}" title="${s}">${i+1}</b>`).join('')}</div>`}
+
+function vCity(){
+  const q=S.q.trim().toLowerCase(),by={};
+  DATA.cities.forEach(c=>{const st=DATA.states[c.state];
+    if(q&&![c.name_en,c.name_hi,st.name_en,st.name_hi,c.id].join(' ').toLowerCase().includes(q))return;(by[c.state]=by[c.state]||[]).push(c)});
+  const keys=Object.keys(by).sort((a,b)=>L(DATA.states[a],'name').localeCompare(L(DATA.states[b],'name'),S.lang));
+  if(q){ // while searching: one flat list, best match first (exact name, then name starts with, then anything else)
+    const score=c=>{const n=[c.name_en,c.name_hi].map(x=>x.toLowerCase());return n.includes(q)?0:n.some(x=>x.startsWith(q))?1:n.some(x=>x.includes(q))?2:3};
+    const hits=keys.flatMap(k=>by[k]).sort((a,b)=>score(a)-score(b)||a.name_en.localeCompare(b.name_en));
+    return `${trail(0)}<h1 class="q">${t('q1')}</h1><p class="sub">${t('s1')(DATA.cities.length)}</p>
+  <label class="find"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" autocomplete="off" placeholder="${esc(t('find'))}" value="${esc(S.q)}" aria-label="${esc(t('find'))}"></label>
+  <div class="states" id="states">${hits.length?`<div class="cgrid">${hits.map(c=>`<button class="city" type="button" data-city="${c.id}">${esc(L(c,'name'))}<br><small style="color:var(--ink-2)">${esc(L(DATA.states[c.state],'name'))}</small></button>`).join('')}</div>`:`<p class="none">${t('none')}</p>`}</div>`;
+  }
+  const lc=last?cityById(last):null;
+  return `${trail(0)}<h1 class="q">${t('q1')}</h1><p class="sub">${t('s1')(DATA.cities.length)}</p>
+  <label class="find"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" autocomplete="off" placeholder="${esc(t('find'))}" value="${esc(S.q)}" aria-label="${esc(t('find'))}"></label>
+  ${lc?`<button class="recent" type="button" ${q?'hidden':''} data-city="${lc.id}"><div><span>${t('again')}</span><br><b>${esc(L(lc,'name'))}</b></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 5 7 7-7 7"/></svg></button>`:''}
+  <div class="states" id="states">${keys.map(k=>`<div class="state"><h3>${esc(L(DATA.states[k],'name'))}</h3><div class="cgrid">${
+    by[k].map(c=>`<button class="city" type="button" data-city="${c.id}">${esc(L(c,'name'))}</button>`).join('')}</div></div>`).join('')||`<p class="none">${t('none')}</p>`}</div>`;
+}
+
+function vProb(){
+  const c=cityById(S.city);
+  const ps=DATA.problems.problems;
+  return `${trail(1)}<div class="where">${t('in')}: <b>${esc(L(c,'name'))}</b> · <button type="button" data-go="city" style="text-decoration:underline;color:var(--red)">${t('change')}</button></div>
+  <h1 class="q">${t('q2')}</h1>
+  <div class="tiles">${ps.map(p=>`<button class="tile ${p.id==='safety'?'sos':''}" type="button" data-prob="${p.id}">${svg(p.id)}<span>${esc(p[S.lang])}</span></button>`).join('')}</div>`;
+}
+
+function wayHTML(c){
+  const mk=c.status==='verified'?`<span class="mark ok">${t('ok')}</span>`:c.status?`<span class="mark chk">${t('chk')}</span>`:'';
+  const v=c.value?(c.type==='phone'?fmt(c.value):c.value):'';
+  let act='';
+  if(c.type==='phone'&&c.value)act=`<a class="sbtn" href="tel:${esc(c.value)}">${t('call')}</a><button class="sbtn" type="button" data-copy="${esc(c.value)}">${t('copy')}</button>`;
+  else if(c.type==='web'&&c.value)act=`<a class="sbtn" href="https://${esc(c.value.replace(/^https?:\/\//,''))}" target="_blank" rel="noopener">${t('visit')}</a>`;
+  else if(c.value)act=`<button class="sbtn" type="button" data-copy="${esc(c.value)}">${t('copy')}</button>`;
+  return `<li class="way"><span class="v">${esc(v||L(c,'label'))}</span><span class="l">${v?esc(L(c,'label')):''}${mk}</span><span class="act">${act}</span></li>`;
+}
+
+function vResult(){
+  const c=cityById(S.city),p=DATA.problems.problems.find(x=>x.id===S.prob),R=route(c,p),pr=R.primary;
+  const others=R.list.filter(x=>x!==pr);
+  const ladder=DATA.problems.escalation_ladder,LAD={municipal:[1,2,3,4,5,6],water:[1,2,3,4,5,6],discom:[1,4,5,6],police:[1,4,5],state:[1,4,5,6],central:[1,5,6]};
+  const steps=(LAD[p.body]||LAD.municipal);
+  const stepsHTML=steps.map((n,i)=>{const s=ladder.find(x=>x.step===n);let det='';
+    if(n===2&&c.municipal.escalation)det=`${t('write2')}: ${c.municipal.escalation}`;
+    if(n===4)det=`${L(R.st.grievance,'name')} · ${R.st.grievance.channels.map(x=>x.type==='phone'?fmt(x.value):x.value).join(' · ')}`;
+    if(n===5)det=`${t('mp')}: ${c.reps.mps.map(m=>m.name).join(', ')}`;
+    if(n===6)det='rtionline.gov.in';
+    return `<li><span class="pm">${String(i+1).padStart(2,'0')}</span><div><div class="wait">${t('waits')[i]}</div><div class="what">${esc(s[S.lang])}</div>${det?`<div class="det">${esc(det)}</div>`:''}</div></li>`}).join('');
+  const r=c.reps;
+  const repRows=[...r.mps.map(m=>`<div class="rep"><span class="s">${t('mp')} · ${esc(m.seat)}</span><span class="n">${esc(m.name)}</span></div>`),
+    ...r.mlas.map(m=>`<div class="rep"><span class="s">${t('mla')} · ${esc(m.seat)}${m.name&&r.mla_status==='needs_verification'?`<span class="mark chk">${t('chk')}</span>`:''}</span><span class="n ${m.name?'':'empty'}">${esc(m.name||t('nameMissing'))}</span></div>`),
+    `<div class="rep"><span class="s">${t('councillor')}</span><span class="n empty">${t('councillorMissing')}</span></div>`].join('');
+  const prV=pr?(pr.type==='phone'?fmt(pr.value):pr.value):'';
+  return `${trail(2)}
+  <div class="head3"><span class="typed">${esc(L(c,'name'))} · ${esc(p[S.lang])}</span><span class="typed">${t('resp')}:</span>
+    <h1 class="office">${esc(R.who)}</h1><span class="dept">${esc(R.dept)}</span></div>
+  ${R.notes.map(n=>`<div class="alert ${n.cls}">${esc(n.txt)}</div>`).join('')}
+
+  <div class="section-t"><b>01</b><h2>${t('firstH')}</h2></div>
+  ${pr?`<div class="call"><span class="lbl">${esc(L(pr,'label'))}${pr.status==='verified'?`<span class="mark ok">${t('ok')}</span>`:`<span class="mark chk">${t('chk')}</span>`}</span>
+    <span class="num">${esc(prV)}</span>
+    <div class="row">${pr.type==='phone'?`<a class="cbtn red" href="tel:${esc(pr.value)}">${t('call')}</a><button class="cbtn ghost" type="button" data-copy="${esc(pr.value)}">${t('copy')}</button>`:
+      `<a class="cbtn red" href="https://${esc(pr.value.replace(/^https?:\/\//,''))}" target="_blank" rel="noopener">${t('visit')}</a>`}</div></div>`:''}
+
+  <div class="section-t"><b>02</b><h2>${t('writeH')}</h2></div>
+  <div class="letterwrap"><div class="letter unfold" id="letter">
+    <div class="stamp" id="stamp" aria-hidden="true"><div>${t('stampTop')}<b>${t('stamp')}</b>${new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}).toUpperCase()}</div></div>
+    <div class="t to">${t('to')}\n${esc(R.dept)}\n${esc(R.who)}, ${esc(L(c,'name'))}</div>
+    <div class="t"><span class="subj">${t('subj')}</span> ${esc(p[S.lang])}</div>
+    <div class="t">${t('body1')}</div>
+    <div>${S.lang==='hi'
+      ?`<input class="blank" id="f-loc" size="14" placeholder="${t('at')}" value="${esc(S.loc)}"> में ${esc(p.hi)} की समस्या <input class="blank" id="f-since" size="8" placeholder="${t('since')}" value="${esc(S.since)}"> से है।`
+      :`There is a problem of “${esc(p.en.toLowerCase())}” at <input class="blank" id="f-loc" size="14" placeholder="${t('at')}" value="${esc(S.loc)}">, for <input class="blank" id="f-since" size="8" placeholder="${t('since')}" value="${esc(S.since)}">.`}</div>
+    <textarea class="blank" id="f-det" placeholder="${t('more')}">${esc(S.det)}</textarea>
+    <div>${t('ask')}</div>
+    <div>${t('sign')}: <input class="blank" id="f-name" size="14" value="${esc(S.name)}" placeholder="…"></div>
+  </div></div>
+  <div class="sendrow"><a class="cbtn red" id="wa" target="_blank" rel="noopener">${t('wa')}</a><button class="cbtn line" type="button" id="cp">${t('cp')}</button></div>
+
+  <div class="section-t"><b>03</b><h2>${t('routeH')}</h2></div>
+  <ol class="route">${stepsHTML}</ol>
+  <p class="small">${t('waitNote')}</p>
+
+  <div class="sendrow"><a class="cbtn line" id="share-wa" target="_blank" rel="noopener">${t('shareWa')}</a><button class="cbtn line" type="button" id="share">${t('share')}</button></div>
+  ${others.length?`<details><summary>${t('other')}</summary><ul class="ways">${others.map(wayHTML).join('')}</ul><div style="height:10px"></div></details>`:''}
+  <details><summary>${t('reps')}</summary><div class="reps">${repRows}</div>${r.mla_note_en?`<p class="small">${esc(L(r,'mla_note'))}</p>`:''}<p class="small">${t('voter')}</p></details>`;
+}
+
+function letterText(){
+  const c=cityById(S.city),p=DATA.problems.problems.find(x=>x.id===S.prob),R=route(c,p),cn=L(c,'name');
+  const loc=S.loc||'____',since=S.since||'____';
+  return S.lang==='hi'
+?`सेवा में,
+${R.dept}
+${R.who}, ${cn}
+
+विषय: ${p.hi}
+
+महोदय/महोदया,
+${loc}, ${cn} में ${p.hi} की समस्या ${since} से है।
+${S.det?S.det+'\n':''}कृपया जल्द कार्रवाई करें और शिकायत क्रमांक दें।
+
+नाम: ${S.name||''}
+दिनांक: ${new Date().toLocaleDateString('en-IN')}`
+:`To,
+${R.dept}
+${R.who}, ${cn}
+
+Subject: ${p.en}
+
+Respected Sir/Madam,
+There is a problem of "${p.en.toLowerCase()}" at ${loc}, ${cn}, for ${since}.
+${S.det?S.det+'\n':''}Kindly take action soon and share the complaint number.
+
+Name: ${S.name||''}
+Date: ${new Date().toLocaleDateString('en-IN')}`}
+
+function syncWa(){const a=$('wa');if(a)a.href='https://wa.me/?text='+encodeURIComponent(letterText());
+  const g=$('share-wa');if(g)g.href='https://wa.me/?text='+encodeURIComponent(guideText())}
+function guideText(){
+  const c=cityById(S.city),p=DATA.problems.problems.find(x=>x.id===S.prob),R=route(c,p);
+  const lines=R.list.filter(x=>x.value).map(x=>`• ${L(x,'label')}: ${x.type==='phone'?fmt(x.value):x.value}`);
+  return (S.lang==='hi'?`${L(c,'name')} – ${p.hi}\nज़िम्मेदार: ${R.who}\n\n`:`${c.name_en} – ${p.en}\nResponsible: ${R.who}\n\n`)+lines.join('\n')+
+    (S.lang==='hi'?'\n\nहल न हो: ज़ोन कार्यालय → पार्षद → राज्य शिकायत प्रणाली → विधायक/सांसद → RTI':'\n\nNot fixed? Zone office → councillor → state grievance system → MLA/MP → RTI')+'\n— Jawabdeh'}
+
+function render(focusSearch){
+  document.documentElement.lang=S.lang;
+  $('tagline').textContent=t('tag');$('lang').textContent=t('lang');$('back').hidden=S.view==='city';
+  const v=$('view');v.innerHTML=S.view==='city'?vCity():S.view==='prob'?vProb():vResult();
+  v.style.animation='none';void v.offsetWidth;v.style.animation='';
+  if(S.view==='result')syncWa();
+  $('manual-t').textContent=t('manualT');
+  const repo=(DATA.site&&DATA.site.repo_url||'').replace(/\/$/,'');
+  const cityName=S.city?cityById(S.city).name_en:'';
+  $('foot').innerHTML=t('foot').map(x=>`<span>${x}</span>`).join('')+
+    (DATA.site&&DATA.site.maintainer?`<span>${S.lang==='hi'?'ओपन-सोर्स प्रोजेक्ट':'An open-source project by'} ${esc(DATA.site.maintainer)}${S.lang==='hi'?' द्वारा':''}</span>`:'')+
+    (repo?`<a href="${esc(repo)}/issues/new?template=correction.yml&title=${encodeURIComponent('[Correction] '+cityName)}" target="_blank" rel="noopener" style="color:var(--red);font-weight:700">${t('report')}</a>`:'');
+  if(focusSearch){const q=$('q');if(q){q.focus();q.setSelectionRange(q.value.length,q.value.length)}}
+}
+function go(view,fromHistory){S.view=view;render();window.scrollTo({top:0,behavior:'auto'});
+  if(!fromHistory){try{history.pushState({v:view,city:S.city,prob:S.prob},'')}catch(e){}}}
+window.addEventListener('popstate',e=>{const st=e.state;if(!st){go('city',true);return}
+  if(st.city)S.city=st.city;if(st.prob)S.prob=st.prob;go(st.v||'city',true)});
+try{history.replaceState({v:'city'},'')}catch(e){}
+
+let tt;function toast(m){const e=$('toast');e.textContent=m;e.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('on'),1700)}
+async function copy(txt){try{await navigator.clipboard.writeText(txt);toast(t('copied'));return true}
+  catch(e){const box=$('manual'),ta=$('manual-text');ta.value=txt;box.hidden=false;ta.focus();ta.select();toast(t('copyFail'));return false}}
+function stamp(){const s=$('stamp'),l=$('letter');if(!s)return;s.classList.remove('hit');l.classList.remove('press','unfold');void s.offsetWidth;s.classList.add('hit');l.classList.add('press')}
+
+document.addEventListener('click',e=>{
+  const a=e.target.closest('#wa');if(a){stamp();return}
+  const b=e.target.closest('button');if(!b)return;
+  if(b.id==='lang'){S.lang=S.lang==='hi'?'en':'hi';save();render()}
+  else if(b.id==='back'){if(history.state&&history.state.v&&history.state.v!=='city')history.back();else go(S.view==='result'?'prob':'city')}
+  else if(b.dataset.city){S.city=b.dataset.city;last=S.city;S.q='';save();go('prob')}
+  else if(b.dataset.go){go(b.dataset.go)}
+  else if(b.dataset.prob){S.prob=b.dataset.prob;go('result')}
+  else if(b.dataset.copy){copy(b.dataset.copy)}
+  else if(b.id==='cp'){copy(letterText()).then(ok=>ok&&stamp())}
+  else if(b.id==='manual-close'){$('manual').hidden=true}
+  else if(b.id==='share'){copy(guideText())}
+});
+document.addEventListener('input',e=>{
+  if(e.target.id==='q'){S.q=e.target.value;
+    const st=$('states');const tmp=document.createElement('div');tmp.innerHTML=vCity();st.replaceWith(tmp.querySelector('#states'));
+    const rc=document.querySelector('.recent');if(rc)rc.hidden=!!S.q.trim();return}
+  const k={'f-loc':'loc','f-since':'since','f-det':'det','f-name':'name'}[e.target.id];if(k){S[k]=e.target.value.trim();syncWa()}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='q'){const f=document.querySelector('#states .city');if(f)f.click()}});
+render();
+</script>

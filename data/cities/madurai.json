@@ -1,0 +1,69 @@
+{
+  "id": "madurai",
+  "name_en": "Madurai",
+  "name_hi": "मदुरै",
+  "state": "tn",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Madurai City Municipal Corporation",
+    "name_hi": "मदुरै नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "7871661787",
+        "label_en": "Phone / WhatsApp",
+        "label_hi": "फ़ोन / WhatsApp",
+        "status": "verified",
+        "source": "https://maduraicorporation.co.in/contact-us"
+      },
+      {
+        "type": "web",
+        "value": "maduraicorporation.co.in",
+        "label_en": "Register Your Complaint (online)",
+        "label_hi": "ऑनलाइन शिकायत दर्ज करें",
+        "status": "verified",
+        "source": "https://maduraicorporation.co.in/contact-us"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "TN Power Distribution Corporation (TNPDCL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "S. Venkatesan",
+        "seat": "Madurai"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Madurai East",
+        "name": ""
+      },
+      {
+        "seat": "Madurai North",
+        "name": ""
+      },
+      {
+        "seat": "Madurai South",
+        "name": ""
+      },
+      {
+        "seat": "Madurai Central",
+        "name": ""
+      },
+      {
+        "seat": "Madurai West",
+        "name": ""
+      }
+    ],
+    "mla_status": "to_be_contributed",
+    "mla_note_en": "MLAs elected in the May 2026 election have not been added yet.",
+    "mla_note_hi": "मई 2026 चुनाव में चुने गए विधायकों के नाम अभी नहीं जोड़े गए हैं।"
+  },
+  "geo": [
+    9.93,
+    78.12
+  ]
+}

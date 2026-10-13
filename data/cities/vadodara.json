@@ -1,0 +1,73 @@
+{
+  "id": "vadodara",
+  "name_en": "Vadodara",
+  "name_hi": "वडोदरा",
+  "state": "gj",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Vadodara Municipal Corporation",
+    "name_hi": "वडोदरा नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "18002330265",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/where-can-i-file-civic-complaints-of-vadodara-municipal-corporation-vmc/1551"
+      },
+      {
+        "type": "phone",
+        "value": "9913166666",
+        "label_en": "WhatsApp complaints",
+        "label_hi": "WhatsApp पर शिकायत",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/where-can-i-file-civic-complaints-of-vadodara-municipal-corporation-vmc/1551"
+      },
+      {
+        "type": "web",
+        "value": "vmc.gov.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ],
+    "escalation": "Municipal Commissioner, Vadodara Municipal Corporation, Khanderao Market, Vadodara 390001"
+  },
+  "discom": {
+    "name_en": "MGVCL (Madhya Gujarat Vij Co.)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Hemang Joshi",
+        "seat": "Vadodara"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Vadodara City",
+        "name": "Manisha Vakil"
+      },
+      {
+        "seat": "Sayajigunj",
+        "name": "Keyur Rokadia"
+      },
+      {
+        "seat": "Akota",
+        "name": "Chaitanya Desai"
+      },
+      {
+        "seat": "Raopura",
+        "name": "Balkrishna Shukla"
+      }
+    ],
+    "mla_status": "needs_verification",
+    "mla_note_en": "Manjalpur had a by-election; its current MLA has not been added yet.",
+    "mla_note_hi": "मांजलपुर में उपचुनाव हुआ था; वहाँ के मौजूदा विधायक का नाम अभी नहीं जोड़ा गया है।"
+  },
+  "geo": [
+    22.31,
+    73.18
+  ]
+}

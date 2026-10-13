@@ -1,0 +1,35 @@
+name: Report wrong or missing information
+description: A number that doesn't work, a changed officeholder, or a missing helpline.
+title: "[Correction] "
+labels: ["data"]
+body:
+  - type: input
+    id: city
+    attributes:
+      label: City
+      placeholder: e.g. Indore
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong or missing?
+      placeholder: e.g. The toll-free number 1800… does not connect / the MLA for Rau has changed
+    validations:
+      required: true
+  - type: textarea
+    id: right
+    attributes:
+      label: What is the correct information?
+  - type: input
+    id: source
+    attributes:
+      label: Source (official website, notice, news article)
+      description: A link helps us verify quickly. A photo of an official notice also works.
+  - type: checkboxes
+    id: tried
+    attributes:
+      label: How do you know?
+      options:
+        - label: I called the number myself
+        - label: It is on an official government website or notice

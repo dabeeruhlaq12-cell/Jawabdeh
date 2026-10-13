@@ -1,0 +1,48 @@
+{
+  "id": "chandigarh",
+  "name_en": "Chandigarh",
+  "name_hi": "चंडीगढ़",
+  "state": "ch",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Municipal Corporation Chandigarh",
+    "name_hi": "चंडीगढ़ नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "01722787200",
+        "label_en": "Citizen helpline",
+        "label_hi": "नागरिक हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/where-can-i-file-civic-complaints-of-chandigarh-municipal-corporation-mcc/1374"
+      },
+      {
+        "type": "web",
+        "value": "mcchandigarh.gov.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ],
+    "escalation": "Municipal Commissioner Cell, Municipal Corporation, Sector 17, Chandigarh"
+  },
+  "discom": {
+    "name_en": "Chandigarh Power Distribution Ltd"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Manish Tewari",
+        "seat": "Chandigarh"
+      }
+    ],
+    "mlas": [],
+    "mla_status": "none",
+    "mla_note_en": "Chandigarh is a Union Territory with no legislative assembly, so there are no MLAs. Escalate to the UT Administration or the MP.",
+    "mla_note_hi": "चंडीगढ़ केंद्र शासित प्रदेश है, यहाँ विधानसभा नहीं है, इसलिए विधायक नहीं हैं। प्रशासन या सांसद तक शिकायत ले जाएँ।"
+  },
+  "geo": [
+    30.73,
+    76.78
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "jabalpur",
+  "name_en": "Jabalpur",
+  "name_hi": "जबलपुर",
+  "state": "mp",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Jabalpur Municipal Corporation",
+    "name_hi": "जबलपुर नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "07612637500",
+        "label_en": "Smart City helpline",
+        "label_hi": "स्मार्ट सिटी हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://www.indiacustomercare.com/jabalpur-municipal-corporation-contact-no"
+      },
+      {
+        "type": "app",
+        "value": "JAN (Jabalpur Apna Nigam)",
+        "label_en": "JAN app",
+        "label_hi": "JAN ऐप (जबलपुर अपना निगम)",
+        "status": "needs_verification",
+        "source": "https://www.indiacustomercare.com/jabalpur-municipal-corporation-contact-no"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "MP Poorv Kshetra Vidyut Vitaran Co. (East DISCOM)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Ashish Dubey",
+        "seat": "Jabalpur"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Jabalpur East",
+        "name": "Lakhan Ghanghoriya"
+      },
+      {
+        "seat": "Jabalpur North",
+        "name": "Abhilash Pandey"
+      },
+      {
+        "seat": "Jabalpur Cantt.",
+        "name": "Ashok Rohani"
+      },
+      {
+        "seat": "Jabalpur West",
+        "name": "Rakesh Singh"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Jabalpur_Lok_Sabha_constituency"
+  },
+  "geo": [
+    23.18,
+    79.99
+  ]
+}

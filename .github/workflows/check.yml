@@ -1,0 +1,16 @@
+name: Check data and site
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate data
+        run: python3 scripts/validate.py
+      - name: Site is rebuilt from data
+        run: |
+          python3 scripts/build.py
+          git diff --exit-code docs/index.html || (echo "Run python3 scripts/build.py and commit docs/index.html" && exit 1)

@@ -1,0 +1,92 @@
+{
+  "id": "kanpur",
+  "name_en": "Kanpur",
+  "name_hi": "कानपुर",
+  "state": "up",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Kanpur Nagar Nigam",
+    "name_hi": "कानपुर नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "1533",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "verified",
+        "source": "https://citizen.complainthub.org/t/how-can-you-file-civic-complaints-of-kanpur-municipal-corporation-kmc/1787"
+      },
+      {
+        "type": "phone",
+        "value": "18001805124",
+        "label_en": "Toll-free general complaints",
+        "label_hi": "टोल-फ़्री सामान्य शिकायत",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-you-file-civic-complaints-of-kanpur-municipal-corporation-kmc/1787"
+      },
+      {
+        "type": "phone",
+        "value": "18001805159",
+        "label_en": "Garbage collection",
+        "label_hi": "कचरा उठान",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-you-file-civic-complaints-of-kanpur-municipal-corporation-kmc/1787"
+      },
+      {
+        "type": "web",
+        "value": "online.kanpursmartcity.org",
+        "label_en": "Online grievance system",
+        "label_hi": "ऑनलाइन शिकायत प्रणाली",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-you-file-civic-complaints-of-kanpur-municipal-corporation-kmc/1787"
+      },
+      {
+        "type": "web",
+        "value": "kmc.up.nic.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ],
+    "escalation": "Municipal Commissioner, Public Grievance Cell, Kanpur Nagar Nigam, Moti Jheel, Harsh Nagar, Kanpur 208002"
+  },
+  "discom": {
+    "name_en": "KESCo (Kanpur Electricity Supply Company)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Ramesh Awasthi",
+        "seat": "Kanpur"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Govind Nagar",
+        "name": "Surendra Maithani"
+      },
+      {
+        "seat": "Sishamau",
+        "name": "Naseem Solanki"
+      },
+      {
+        "seat": "Arya Nagar",
+        "name": "Amitabh Bajpai"
+      },
+      {
+        "seat": "Kidwai Nagar",
+        "name": "Mahesh Trivedi"
+      },
+      {
+        "seat": "Kanpur Cantt.",
+        "name": "Mohammad Hassan Roomi"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Kanpur_Lok_Sabha_constituency"
+  },
+  "geo": [
+    26.45,
+    80.33
+  ]
+}

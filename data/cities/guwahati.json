@@ -1,0 +1,63 @@
+{
+  "id": "guwahati",
+  "name_en": "Guwahati",
+  "name_hi": "गुवाहाटी",
+  "state": "as",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Guwahati Municipal Corporation",
+    "name_hi": "गुवाहाटी नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "8811007000",
+        "label_en": "Call or WhatsApp",
+        "label_hi": "कॉल या WhatsApp",
+        "status": "needs_verification",
+        "source": "https://sentinelassam.com/news/guwahati-municipal-corporation-gmc-helpline-for-public-grievances"
+      },
+      {
+        "type": "web",
+        "value": "gmc.assam.gov.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "Assam Power Distribution Co. (APDCL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Bijuli Kalita Medhi",
+        "seat": "Guwahati"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Dispur",
+        "name": "Pradyut Bordoloi"
+      },
+      {
+        "seat": "New Guwahati",
+        "name": "Diplu Ranjan Sarmah"
+      },
+      {
+        "seat": "Guwahati Central",
+        "name": "Vijay Kumar Gupta"
+      },
+      {
+        "seat": "Jalukbari",
+        "name": "Himanta Biswa Sarma"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/2026_Assam_Legislative_Assembly_election"
+  },
+  "geo": [
+    26.14,
+    91.74
+  ]
+}

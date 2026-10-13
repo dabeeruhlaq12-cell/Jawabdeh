@@ -1,0 +1,84 @@
+{
+  "id": "agra",
+  "name_en": "Agra",
+  "name_hi": "आगरा",
+  "state": "up",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Agra Nagar Nigam",
+    "name_hi": "आगरा नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "1533",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "verified",
+        "source": "https://citizen.complainthub.org/t/where-can-i-file-civic-complaints-of-agra-municipal-corporation-amc/1789"
+      },
+      {
+        "type": "phone",
+        "value": "18004197788",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/where-can-i-file-civic-complaints-of-agra-municipal-corporation-amc/1789"
+      },
+      {
+        "type": "phone",
+        "value": "18001803580",
+        "label_en": "Streetlights",
+        "label_hi": "स्ट्रीटलाइट",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/where-can-i-file-civic-complaints-of-agra-municipal-corporation-amc/1789"
+      },
+      {
+        "type": "phone",
+        "value": "14420",
+        "label_en": "Sewer / septic tank",
+        "label_hi": "सीवर / सेप्टिक टैंक",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/where-can-i-file-civic-complaints-of-agra-municipal-corporation-amc/1789"
+      },
+      {
+        "type": "web",
+        "value": "nagarnigamagra.com",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ],
+    "escalation": "Municipal Commissioner, Agra Nagar Nigam, M.G. Road, Sanjay Place, Agra 282002"
+  },
+  "discom": {
+    "name_en": "Torrent Power (Agra city distribution franchise)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "S. P. Singh Baghel",
+        "seat": "Agra"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Agra Cantt.",
+        "name": "Girraj Singh Dharmesh"
+      },
+      {
+        "seat": "Agra South",
+        "name": "Yogendra Upadhyaya"
+      },
+      {
+        "seat": "Agra North",
+        "name": "Purshottam Khandelwal"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Agra_Lok_Sabha_constituency"
+  },
+  "geo": [
+    27.18,
+    78.01
+  ]
+}

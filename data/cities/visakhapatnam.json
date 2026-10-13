@@ -1,0 +1,88 @@
+{
+  "id": "visakhapatnam",
+  "name_en": "Visakhapatnam",
+  "name_hi": "विशाखापत्तनम",
+  "state": "ap",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Greater Visakhapatnam Municipal Corporation (GVMC)",
+    "name_hi": "विशाखापत्तनम नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "1913",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-greater-visakhapatnam-municipal-corporation-gvmc/1791"
+      },
+      {
+        "type": "phone",
+        "value": "180042500009",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-greater-visakhapatnam-municipal-corporation-gvmc/1791"
+      },
+      {
+        "type": "phone",
+        "value": "9666909192",
+        "label_en": "WhatsApp complaints",
+        "label_hi": "WhatsApp पर शिकायत",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-greater-visakhapatnam-municipal-corporation-gvmc/1791"
+      },
+      {
+        "type": "web",
+        "value": "gvmc.gov.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ],
+    "escalation": "Chief Municipal Commissioner, GVMC HQ, Tenneti Bhavanam, Asilmetta, Visakhapatnam 530002"
+  },
+  "discom": {
+    "name_en": "AP Eastern Power Distribution Co. (APEPDCL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Sribharat Mathukumilli",
+        "seat": "Visakhapatnam"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Visakhapatnam East",
+        "name": "Velagapudi Ramakrishna Babu"
+      },
+      {
+        "seat": "Visakhapatnam South",
+        "name": "Vamsi Krishna Srinivas"
+      },
+      {
+        "seat": "Visakhapatnam North",
+        "name": "Penmetsa Vishnu Kumar Raju"
+      },
+      {
+        "seat": "Visakhapatnam West",
+        "name": "P. G. V. R. Naidu"
+      },
+      {
+        "seat": "Gajuwaka",
+        "name": "Palla Srinivas Rao"
+      },
+      {
+        "seat": "Bheemili",
+        "name": "Ganta Srinivasa Rao"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Visakhapatnam_Lok_Sabha_constituency"
+  },
+  "geo": [
+    17.69,
+    83.22
+  ]
+}

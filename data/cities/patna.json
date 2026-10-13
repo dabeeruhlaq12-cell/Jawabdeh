@@ -1,0 +1,62 @@
+{
+  "id": "patna",
+  "name_en": "Patna",
+  "name_hi": "पटना",
+  "state": "br",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Patna Municipal Corporation",
+    "name_hi": "पटना नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "155304",
+        "label_en": "24×7 toll-free helpline",
+        "label_hi": "24×7 टोल-फ़्री हेल्पलाइन",
+        "status": "verified",
+        "source": "https://patnapress.com/patna-drainage-operations-heavy-rain-august-2025/"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "South Bihar Power Distribution Co. (SBPDCL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Ravi Shankar Prasad",
+        "seat": "Patna Sahib"
+      },
+      {
+        "name": "Misa Bharti",
+        "seat": "Pataliputra (part of city)"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Digha",
+        "name": "Sanjeev Chaurasiya"
+      },
+      {
+        "seat": "Bankipur",
+        "name": "Prashant Kishor"
+      },
+      {
+        "seat": "Kumhrar",
+        "name": "Sanjay Kumar Gupta"
+      },
+      {
+        "seat": "Patna Sahib",
+        "name": "Ratnesh Kumar Kushwaha"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Patna_Sahib_Lok_Sabha_constituency",
+    "mla_note_en": "Bankipur's MLA was elected in a by-election after the 2025 general election.",
+    "mla_note_hi": "बांकीपुर के विधायक 2025 के आम चुनाव के बाद हुए उपचुनाव में चुने गए।"
+  },
+  "geo": [
+    25.59,
+    85.14
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "coimbatore",
+  "name_en": "Coimbatore",
+  "name_hi": "कोयंबटूर",
+  "state": "tn",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Coimbatore City Municipal Corporation",
+    "name_hi": "कोयंबटूर नगर निगम",
+    "channels": [
+      {
+        "type": "web",
+        "value": "ccmc.gov.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "needs_verification"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "TN Power Distribution Corporation (TNPDCL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Ganapathi P. Rajkumar",
+        "seat": "Coimbatore"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Coimbatore North",
+        "name": ""
+      },
+      {
+        "seat": "Coimbatore South",
+        "name": ""
+      },
+      {
+        "seat": "Singanallur",
+        "name": ""
+      },
+      {
+        "seat": "Kavundampalayam",
+        "name": ""
+      }
+    ],
+    "mla_status": "to_be_contributed",
+    "mla_note_en": "MLAs elected in the May 2026 election have not been added yet.",
+    "mla_note_hi": "मई 2026 चुनाव में चुने गए विधायकों के नाम अभी नहीं जोड़े गए हैं।"
+  },
+  "note_en": "A verified municipal helpline for Coimbatore has not been added yet. The TN CM Helpline (1100) accepts civic complaints.",
+  "note_hi": "कोयंबटूर नगर निगम की पुष्ट हेल्पलाइन अभी नहीं जोड़ी गई है। तमिलनाडु सीएम हेल्पलाइन (1100) पर नागरिक शिकायत दर्ज होती है।",
+  "geo": [
+    11.02,
+    76.96
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "lucknow",
+  "name_en": "Lucknow",
+  "name_hi": "लखनऊ",
+  "state": "up",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Lucknow Nagar Nigam",
+    "name_hi": "लखनऊ नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "1533",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "verified",
+        "source": "https://citizen.complainthub.org/t/where-can-i-file-civic-complaints-to-lucknow-municipal-corporation-lmc/1417"
+      },
+      {
+        "type": "phone",
+        "value": "9219902911",
+        "label_en": "WhatsApp complaints",
+        "label_hi": "WhatsApp पर शिकायत",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/where-can-i-file-civic-complaints-to-lucknow-municipal-corporation-lmc/1417"
+      },
+      {
+        "type": "web",
+        "value": "lucknow.everythingcivic.com",
+        "label_en": "Lucknow Nagar Nigam 311 (online complaint)",
+        "label_hi": "लखनऊ नगर निगम 311 (ऑनलाइन शिकायत)",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/where-can-i-file-civic-complaints-to-lucknow-municipal-corporation-lmc/1417"
+      },
+      {
+        "type": "web",
+        "value": "lmc.up.nic.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ],
+    "escalation": "Municipal Commissioner, Public Grievance Cell, Lucknow Nagar Nigam, Trilokinath Road, Lalbagh, Lucknow 226001"
+  },
+  "discom": {
+    "name_en": "Madhyanchal Vidyut Vitran Nigam (MVVNL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Rajnath Singh",
+        "seat": "Lucknow"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Lucknow West",
+        "name": "Armaan Khan"
+      },
+      {
+        "seat": "Lucknow North",
+        "name": "Neeraj Bora"
+      },
+      {
+        "seat": "Lucknow East",
+        "name": "O. P. Srivastava"
+      },
+      {
+        "seat": "Lucknow Central",
+        "name": "Ravidas Mehrotra"
+      },
+      {
+        "seat": "Lucknow Cantt.",
+        "name": "Brajesh Pathak"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Lucknow_Lok_Sabha_constituency"
+  },
+  "geo": [
+    26.85,
+    80.95
+  ]
+}

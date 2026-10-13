@@ -1,0 +1,73 @@
+{
+  "id": "kochi",
+  "name_en": "Kochi",
+  "name_hi": "कोच्चि",
+  "state": "kl",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Kochi Municipal Corporation",
+    "name_hi": "कोच्चि नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "04842369007",
+        "label_en": "Citizen helpline",
+        "label_hi": "नागरिक हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-kochi-municipal-corporation-kmc/1550"
+      },
+      {
+        "type": "web",
+        "value": "citizen.lsgkerala.gov.in",
+        "label_en": "Online grievance (K-SMART / LSG portal)",
+        "label_hi": "ऑनलाइन शिकायत (LSG पोर्टल)",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-kochi-municipal-corporation-kmc/1550"
+      }
+    ],
+    "escalation": "Municipal Commissioner, Kochi Municipal Corporation, PB No 1016, Ernakulam 682011"
+  },
+  "discom": {
+    "name_en": "Kerala State Electricity Board (KSEB)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Hibi Eden",
+        "seat": "Ernakulam"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Kochi",
+        "name": "Mohammad Shiyas"
+      },
+      {
+        "seat": "Ernakulam",
+        "name": "T. J. Vinod"
+      },
+      {
+        "seat": "Thrikkakara",
+        "name": "Uma Thomas"
+      },
+      {
+        "seat": "Thrippunithura",
+        "name": "Deepak Joy"
+      },
+      {
+        "seat": "Kalamassery",
+        "name": "V. E. Abdul Gafoor"
+      },
+      {
+        "seat": "Vypin",
+        "name": "Tony Chammany"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/2026_Kerala_Legislative_Assembly_election"
+  },
+  "geo": [
+    9.93,
+    76.27
+  ]
+}

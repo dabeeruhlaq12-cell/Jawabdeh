@@ -1,0 +1,99 @@
+{
+  "id": "jaipur",
+  "name_en": "Jaipur",
+  "name_hi": "जयपुर",
+  "state": "rj",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Nagar Nigam Jaipur",
+    "name_hi": "जयपुर नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "01412747400",
+        "label_en": "Citizen helpline",
+        "label_hi": "नागरिक हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-you-file-civic-complaints-of-greater-jaipur-municipal-corporation-jmc/1682"
+      },
+      {
+        "type": "phone",
+        "value": "01412742900",
+        "label_en": "Control room",
+        "label_hi": "कंट्रोल रूम",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-you-file-civic-complaints-of-greater-jaipur-municipal-corporation-jmc/1682"
+      },
+      {
+        "type": "phone",
+        "value": "14420",
+        "label_en": "Sewer / septic tank",
+        "label_hi": "सीवर / सेप्टिक टैंक",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-you-file-civic-complaints-of-greater-jaipur-municipal-corporation-jmc/1682"
+      },
+      {
+        "type": "web",
+        "value": "samadhan.jaipurmc.org",
+        "label_en": "Online complaint",
+        "label_hi": "ऑनलाइन शिकायत",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-you-file-civic-complaints-of-greater-jaipur-municipal-corporation-jmc/1682"
+      },
+      {
+        "type": "web",
+        "value": "jaipurmc.org",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "Jaipur Vidyut Vitran Nigam (JVVNL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Manju Sharma",
+        "seat": "Jaipur"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Hawa Mahal",
+        "name": "Balmukund Acharya"
+      },
+      {
+        "seat": "Vidhyadhar Nagar",
+        "name": "Diya Kumari"
+      },
+      {
+        "seat": "Civil Lines",
+        "name": "Gopal Sharma"
+      },
+      {
+        "seat": "Kishanpole",
+        "name": "Aminuddin Kagzi"
+      },
+      {
+        "seat": "Adarsh Nagar",
+        "name": "Rafeek Khan"
+      },
+      {
+        "seat": "Malviya Nagar",
+        "name": "Kali Charan Saraf"
+      },
+      {
+        "seat": "Sanganer",
+        "name": "Bhajan Lal Sharma"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Jaipur_Lok_Sabha_constituency"
+  },
+  "geo": [
+    26.91,
+    75.79
+  ]
+}

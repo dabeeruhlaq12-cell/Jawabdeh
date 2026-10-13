@@ -1,0 +1,52 @@
+{
+  "id": "bhubaneswar",
+  "name_en": "Bhubaneswar",
+  "name_hi": "भुवनेश्वर",
+  "state": "od",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Bhubaneswar Municipal Corporation",
+    "name_hi": "भुवनेश्वर नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "18003450061",
+        "label_en": "Unified helpline (BMC, BDA, Smart City, buses)",
+        "label_hi": "एकीकृत हेल्पलाइन (BMC, BDA, स्मार्ट सिटी, बस)",
+        "status": "needs_verification",
+        "source": "https://www.orissapost.com/24x7-helpline-for-citizens-grievances/amp/"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "TP Central Odisha Distribution Ltd (TPCODL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Aparajita Sarangi",
+        "seat": "Bhubaneswar"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Bhubaneswar Central",
+        "name": "Ananta Narayan Jena"
+      },
+      {
+        "seat": "Bhubaneswar North",
+        "name": "Susant Kumar Rout"
+      },
+      {
+        "seat": "Ekamra-Bhubaneswar",
+        "name": "Babu Singh"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Bhubaneswar_Lok_Sabha_constituency"
+  },
+  "geo": [
+    20.3,
+    85.82
+  ]
+}

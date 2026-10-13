@@ -1,0 +1,14 @@
+{
+  "_about": "Channels that work in every Indian city.",
+  "channels": [
+    { "id": "cpgrams", "label_en": "CPGRAMS: central government grievances", "label_hi": "CPGRAMS: केंद्र सरकार की शिकायतें", "value": "pgportal.gov.in", "type": "web" },
+    { "id": "emergency", "label_en": "Emergency (police, fire, ambulance)", "label_hi": "आपातकाल (पुलिस, फ़ायर, एम्बुलेंस)", "value": "112", "type": "phone" },
+    { "id": "women", "label_en": "Women's helpline", "label_hi": "महिला हेल्पलाइन", "value": "1091", "type": "phone" },
+    { "id": "child", "label_en": "Child helpline", "label_hi": "चाइल्ड हेल्पलाइन", "value": "1098", "type": "phone" },
+    { "id": "cyber", "label_en": "Cyber crime (also cybercrime.gov.in)", "label_hi": "साइबर अपराध (cybercrime.gov.in भी)", "value": "1930", "type": "phone" },
+    { "id": "rail", "label_en": "Rail Madad", "label_hi": "रेल मदद", "value": "139", "type": "phone" },
+    { "id": "nhai", "label_en": "National Highway (NHAI)", "label_hi": "नेशनल हाईवे (NHAI)", "value": "1033", "type": "phone" },
+    { "id": "power", "label_en": "Electricity complaint", "label_hi": "बिजली शिकायत", "value": "1912", "type": "phone" },
+    { "id": "rti", "label_en": "RTI online (central bodies)", "label_hi": "RTI ऑनलाइन (केंद्रीय विभाग)", "value": "rtionline.gov.in", "type": "web" }
+  ]
+}

@@ -1,0 +1,413 @@
+{
+  "up": {
+    "id": "up",
+    "name_en": "Uttar Pradesh",
+    "name_hi": "उत्तर प्रदेश",
+    "grievance": {
+      "name_en": "Jansunwai (IGRS) – UP CM grievance system",
+      "name_hi": "जनसुनवाई (IGRS) – उ.प्र. मुख्यमंत्री शिकायत प्रणाली",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "1076",
+          "label_en": "CM Helpline",
+          "label_hi": "मुख्यमंत्री हेल्पलाइन",
+          "status": "verified"
+        },
+        {
+          "type": "web",
+          "value": "jansunwai.up.nic.in",
+          "label_en": "Jansunwai portal",
+          "label_hi": "जनसुनवाई पोर्टल",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/where-can-you-file-complaints-against-government-offices-departments-and-public-services/104"
+        }
+      ]
+    },
+    "municipal_shared": [
+      {
+        "type": "phone",
+        "value": "1533",
+        "label_en": "Urban local body helpline (all UP cities)",
+        "label_hi": "नगर निकाय हेल्पलाइन (उ.प्र. के सभी शहर)",
+        "status": "verified",
+        "source": "https://citizen.complainthub.org/t/how-can-you-file-civic-complaints-of-kanpur-municipal-corporation-kmc/1787"
+      }
+    ]
+  },
+  "uk": {
+    "id": "uk",
+    "name_en": "Uttarakhand",
+    "name_hi": "उत्तराखंड",
+    "grievance": {
+      "name_en": "Uttarakhand CM Helpline",
+      "name_hi": "उत्तराखंड मुख्यमंत्री हेल्पलाइन",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "1905",
+          "label_en": "CM Helpline",
+          "label_hi": "मुख्यमंत्री हेल्पलाइन",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-dehradun-municipal-corporation/237"
+        },
+        {
+          "type": "web",
+          "value": "cmhelpline.uk.gov.in",
+          "label_en": "CM Helpline portal",
+          "label_hi": "सीएम हेल्पलाइन पोर्टल",
+          "status": "verified"
+        }
+      ]
+    }
+  },
+  "pb": {
+    "id": "pb",
+    "name_en": "Punjab",
+    "name_hi": "पंजाब",
+    "grievance": {
+      "name_en": "Connect Punjab – public grievance system",
+      "name_hi": "कनेक्ट पंजाब – जन शिकायत प्रणाली",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "1100",
+          "label_en": "CM Helpline (e-Sewa)",
+          "label_hi": "सीएम हेल्पलाइन (ई-सेवा)",
+          "status": "needs_verification",
+          "source": "https://citizen.complainthub.org/t/how-can-i-file-complaints-about-government-offices-to-department-of-public-grievance-of-punjab-cm-helpline/1713"
+        },
+        {
+          "type": "web",
+          "value": "connect.punjab.gov.in",
+          "label_en": "Connect Punjab portal",
+          "label_hi": "कनेक्ट पंजाब पोर्टल",
+          "status": "verified"
+        }
+      ]
+    }
+  },
+  "ch": {
+    "id": "ch",
+    "name_en": "Chandigarh (UT)",
+    "name_hi": "चंडीगढ़ (केंद्र शासित)",
+    "grievance": {
+      "name_en": "Chandigarh Administration e-grievance / CPGRAMS",
+      "name_hi": "चंडीगढ़ प्रशासन ई-शिकायत / CPGRAMS",
+      "channels": [
+        {
+          "type": "web",
+          "value": "eservices.chd.gov.in",
+          "label_en": "UT grievance registration",
+          "label_hi": "केंद्र शासित प्रदेश शिकायत पंजीकरण",
+          "status": "needs_verification"
+        },
+        {
+          "type": "web",
+          "value": "pgportal.gov.in",
+          "label_en": "CPGRAMS (appellate route for MC Chandigarh)",
+          "label_hi": "CPGRAMS (नगर निगम की अपील के लिए)",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/where-can-i-file-civic-complaints-of-chandigarh-municipal-corporation-mcc/1374"
+        }
+      ]
+    }
+  },
+  "rj": {
+    "id": "rj",
+    "name_en": "Rajasthan",
+    "name_hi": "राजस्थान",
+    "grievance": {
+      "name_en": "Rajasthan Sampark",
+      "name_hi": "राजस्थान संपर्क",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "181",
+          "label_en": "Rajasthan Sampark helpline",
+          "label_hi": "राजस्थान संपर्क हेल्पलाइन",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/how-can-you-file-civic-complaints-of-greater-jaipur-municipal-corporation-jmc/1682"
+        },
+        {
+          "type": "web",
+          "value": "sampark.rajasthan.gov.in",
+          "label_en": "Rajasthan Sampark portal",
+          "label_hi": "राजस्थान संपर्क पोर्टल",
+          "status": "verified"
+        }
+      ]
+    }
+  },
+  "mp": {
+    "id": "mp",
+    "name_en": "Madhya Pradesh",
+    "name_hi": "मध्य प्रदेश",
+    "grievance": {
+      "name_en": "MP CM Helpline (Jan Setu)",
+      "name_hi": "मुख्यमंत्री हेल्पलाइन (जन सेतु)",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "181",
+          "label_en": "CM Helpline",
+          "label_hi": "सीएम हेल्पलाइन",
+          "status": "verified"
+        },
+        {
+          "type": "web",
+          "value": "cmhelpline.mp.gov.in",
+          "label_en": "CM Helpline portal",
+          "label_hi": "सीएम हेल्पलाइन पोर्टल",
+          "status": "verified"
+        }
+      ]
+    }
+  },
+  "cg": {
+    "id": "cg",
+    "name_en": "Chhattisgarh",
+    "name_hi": "छत्तीसगढ़",
+    "grievance": {
+      "name_en": "Jan Shikayat – CG public grievance system",
+      "name_hi": "जन शिकायत – छ.ग. लोक शिकायत प्रणाली",
+      "channels": [
+        {
+          "type": "web",
+          "value": "janshikayat.cg.nic.in",
+          "label_en": "Jan Shikayat portal",
+          "label_hi": "जन शिकायत पोर्टल",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/how-can-i-file-complaints-about-government-offices-to-public-grievance-redressal-department-jan-shikayat-chhattisgarh/1585"
+        },
+        {
+          "type": "phone",
+          "value": "1100",
+          "label_en": "Grievance helpline",
+          "label_hi": "शिकायत हेल्पलाइन",
+          "status": "needs_verification"
+        }
+      ]
+    }
+  },
+  "mh": {
+    "id": "mh",
+    "name_en": "Maharashtra",
+    "name_hi": "महाराष्ट्र",
+    "grievance": {
+      "name_en": "Aaple Sarkar – Maharashtra grievance system",
+      "name_hi": "आपले सरकार – महाराष्ट्र शिकायत प्रणाली",
+      "channels": [
+        {
+          "type": "web",
+          "value": "grievances.maharashtra.gov.in",
+          "label_en": "Aaple Sarkar grievance portal",
+          "label_hi": "आपले सरकार शिकायत पोर्टल",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/where-can-you-file-complaints-against-government-offices-departments-and-public-services/104"
+        }
+      ]
+    }
+  },
+  "gj": {
+    "id": "gj",
+    "name_en": "Gujarat",
+    "name_hi": "गुजरात",
+    "grievance": {
+      "name_en": "Gujarat CMO Samadhan",
+      "name_hi": "गुजरात सीएमओ समाधान",
+      "channels": [
+        {
+          "type": "web",
+          "value": "cmogujarat.gov.in/en/write-to-cmo",
+          "label_en": "Write to CMO (Samadhan)",
+          "label_hi": "सीएमओ को लिखें (समाधान)",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/where-can-you-file-complaints-against-government-offices-departments-and-public-services/104"
+        }
+      ]
+    }
+  },
+  "br": {
+    "id": "br",
+    "name_en": "Bihar",
+    "name_hi": "बिहार",
+    "grievance": {
+      "name_en": "Bihar Lok Shikayat (Right to Public Grievance Redressal)",
+      "name_hi": "बिहार लोक शिकायत (लोक शिकायत निवारण अधिकार)",
+      "channels": [
+        {
+          "type": "web",
+          "value": "lokshikayat.bihar.gov.in",
+          "label_en": "Lok Shikayat portal",
+          "label_hi": "लोक शिकायत पोर्टल",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/where-can-you-file-complaints-against-government-offices-departments-and-public-services/104"
+        }
+      ]
+    },
+    "note_en": "Under Bihar's public grievance law the officer must give a hearing and a written decision within a fixed time.",
+    "note_hi": "बिहार के लोक शिकायत क़ानून के तहत अधिकारी को तय समय में सुनवाई कर लिखित फ़ैसला देना होता है।"
+  },
+  "jh": {
+    "id": "jh",
+    "name_en": "Jharkhand",
+    "name_hi": "झारखंड",
+    "grievance": {
+      "name_en": "Jharkhand CMO grievance",
+      "name_hi": "झारखंड मुख्यमंत्री कार्यालय शिकायत",
+      "channels": [
+        {
+          "type": "web",
+          "value": "cm.jharkhand.gov.in",
+          "label_en": "CMO Jharkhand grievance",
+          "label_hi": "मुख्यमंत्री कार्यालय शिकायत",
+          "status": "needs_verification"
+        },
+        {
+          "type": "phone",
+          "value": "181",
+          "label_en": "CM Jansamvad helpline",
+          "label_hi": "सीएम जनसंवाद हेल्पलाइन",
+          "status": "needs_verification"
+        }
+      ]
+    }
+  },
+  "od": {
+    "id": "od",
+    "name_en": "Odisha",
+    "name_hi": "ओडिशा",
+    "grievance": {
+      "name_en": "Jana Sunani – Odisha grievance system",
+      "name_hi": "जन सुनानी – ओडिशा शिकायत प्रणाली",
+      "channels": [
+        {
+          "type": "web",
+          "value": "janasunani.odisha.gov.in",
+          "label_en": "Jana Sunani portal",
+          "label_hi": "जन सुनानी पोर्टल",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/where-can-you-file-complaints-against-government-offices-departments-and-public-services/104"
+        }
+      ]
+    }
+  },
+  "as": {
+    "id": "as",
+    "name_en": "Assam",
+    "name_hi": "असम",
+    "grievance": {
+      "name_en": "Assam CM Grievance Cell",
+      "name_hi": "असम मुख्यमंत्री शिकायत प्रकोष्ठ",
+      "channels": [
+        {
+          "type": "web",
+          "value": "cm.assam.gov.in/write-to-cm",
+          "label_en": "Write to the CM",
+          "label_hi": "मुख्यमंत्री को लिखें",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/where-can-you-file-complaints-against-government-offices-departments-and-public-services/104"
+        }
+      ]
+    }
+  },
+  "tn": {
+    "id": "tn",
+    "name_en": "Tamil Nadu",
+    "name_hi": "तमिलनाडु",
+    "grievance": {
+      "name_en": "Tamil Nadu CM Helpline",
+      "name_hi": "तमिलनाडु मुख्यमंत्री हेल्पलाइन",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "1100",
+          "label_en": "CM Helpline",
+          "label_hi": "सीएम हेल्पलाइन",
+          "status": "verified"
+        },
+        {
+          "type": "web",
+          "value": "cmhelpline.tnega.org",
+          "label_en": "CM Helpline portal",
+          "label_hi": "सीएम हेल्पलाइन पोर्टल",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/where-can-you-file-complaints-against-government-offices-departments-and-public-services/104"
+        }
+      ]
+    }
+  },
+  "ka": {
+    "id": "ka",
+    "name_en": "Karnataka",
+    "name_hi": "कर्नाटक",
+    "grievance": {
+      "name_en": "Janaspandana IPGRS – Karnataka",
+      "name_hi": "जनस्पंदन IPGRS – कर्नाटक",
+      "channels": [
+        {
+          "type": "web",
+          "value": "ipgrs.karnataka.gov.in",
+          "label_en": "Janaspandana portal",
+          "label_hi": "जनस्पंदन पोर्टल",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/where-can-you-file-complaints-against-government-offices-departments-and-public-services/104"
+        },
+        {
+          "type": "phone",
+          "value": "1902",
+          "label_en": "Janaspandana helpline",
+          "label_hi": "जनस्पंदन हेल्पलाइन",
+          "status": "needs_verification"
+        }
+      ]
+    }
+  },
+  "ap": {
+    "id": "ap",
+    "name_en": "Andhra Pradesh",
+    "name_hi": "आंध्र प्रदेश",
+    "grievance": {
+      "name_en": "AP Public Grievance Redressal System (PGRS)",
+      "name_hi": "आं.प्र. लोक शिकायत निवारण प्रणाली (PGRS)",
+      "channels": [
+        {
+          "type": "web",
+          "value": "pgrs.ap.gov.in",
+          "label_en": "PGRS portal",
+          "label_hi": "PGRS पोर्टल",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/where-can-you-file-complaints-against-government-offices-departments-and-public-services/104"
+        },
+        {
+          "type": "phone",
+          "value": "1100",
+          "label_en": "State call centre",
+          "label_hi": "राज्य कॉल सेंटर",
+          "status": "needs_verification",
+          "source": "https://www.indiacustomercare.com/vijayawada-municipal-corporation-contact-no"
+        }
+      ]
+    }
+  },
+  "kl": {
+    "id": "kl",
+    "name_en": "Kerala",
+    "name_hi": "केरल",
+    "grievance": {
+      "name_en": "Kerala CM's Public Grievance Redressal Cell",
+      "name_hi": "केरल मुख्यमंत्री लोक शिकायत निवारण प्रकोष्ठ",
+      "channels": [
+        {
+          "type": "web",
+          "value": "complaints.cmo.kerala.gov.in",
+          "label_en": "CMO grievance portal",
+          "label_hi": "मुख्यमंत्री कार्यालय शिकायत पोर्टल",
+          "status": "verified",
+          "source": "https://citizen.complainthub.org/t/where-can-you-file-complaints-against-government-offices-departments-and-public-services/104"
+        }
+      ]
+    }
+  }
+}

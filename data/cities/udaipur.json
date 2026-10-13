@@ -1,0 +1,41 @@
+{
+  "id": "udaipur",
+  "name_en": "Udaipur",
+  "name_hi": "उदयपुर",
+  "state": "rj",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Nagar Nigam Udaipur",
+    "name_hi": "उदयपुर नगर निगम",
+    "channels": []
+  },
+  "discom": {
+    "name_en": "Ajmer Vidyut Vitran Nigam (AVVNL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Manna Lal Rawat",
+        "seat": "Udaipur"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Udaipur",
+        "name": "Tarachand Jain"
+      },
+      {
+        "seat": "Udaipur Rural",
+        "name": "Phool Singh Meena"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Udaipur_Lok_Sabha_constituency"
+  },
+  "note_en": "A verified municipal helpline for Udaipur has not been added yet. Rajasthan Sampark (181) accepts municipal complaints.",
+  "note_hi": "उदयपुर नगर निगम की पुष्ट हेल्पलाइन अभी नहीं जोड़ी गई है। राजस्थान संपर्क (181) पर नगर निगम की शिकायत दर्ज होती है।",
+  "geo": [
+    24.59,
+    73.71
+  ]
+}

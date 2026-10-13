@@ -1,0 +1,122 @@
+{
+  "_about": "Generic map of common civic problems to the body that is legally/operationally responsible in a typical Indian city. City files map each 'body' key to local department names and channels.",
+  "_basis": "Municipal functions follow the 12th Schedule (74th Amendment); utilities, police and highways sit with other agencies. Always verify locally: some cities hand roads or water to a development authority or a private operator.",
+  "problems": [
+    {
+      "id": "road",
+      "en": "Pothole / damaged road",
+      "hi": "गड्ढा / टूटी सड़क",
+      "body": "municipal",
+      "dept_en": "Public Works / Engineering (zone office)",
+      "dept_hi": "लोक निर्माण / इंजीनियरिंग विभाग (ज़ोन कार्यालय)",
+      "caveat_en": "If it is a National Highway, it is NHAI (helpline 1033). State highways belong to the State PWD. New colonies may still be under the development authority.",
+      "caveat_hi": "नेशनल हाईवे हो तो NHAI (हेल्पलाइन 1033) ज़िम्मेदार है। स्टेट हाईवे राज्य PWD का। नई कॉलोनियाँ कभी-कभी विकास प्राधिकरण के अधीन होती हैं।"
+    },
+    {
+      "id": "water",
+      "en": "No water / dirty water / pipeline leak",
+      "hi": "पानी नहीं / गंदा पानी / पाइपलाइन लीक",
+      "body": "water",
+      "dept_en": "Water supply department",
+      "dept_hi": "जल प्रदाय विभाग",
+      "caveat_en": "Dirty or contaminated water is a health risk: mention smell/colour and how many houses are affected.",
+      "caveat_hi": "गंदा पानी स्वास्थ्य के लिए ख़तरा है: रंग/बदबू और कितने घर प्रभावित हैं, ज़रूर लिखें।"
+    },
+    {
+      "id": "drain",
+      "en": "Sewer overflow / blocked drain / waterlogging",
+      "hi": "सीवर ओवरफ्लो / नाली जाम / जलभराव",
+      "body": "municipal",
+      "dept_en": "Drainage / Sewerage department",
+      "dept_hi": "ड्रेनेज / सीवरेज विभाग"
+    },
+    {
+      "id": "garbage",
+      "en": "Garbage not collected / dumping",
+      "hi": "कचरा नहीं उठा / कचरा फेंका गया",
+      "body": "municipal",
+      "dept_en": "Solid Waste Management / Health (sanitation)",
+      "dept_hi": "ठोस अपशिष्ट प्रबंधन / स्वास्थ्य (सफ़ाई) विभाग"
+    },
+    {
+      "id": "streetlight",
+      "en": "Streetlight not working",
+      "hi": "स्ट्रीटलाइट बंद",
+      "body": "municipal",
+      "dept_en": "Electrical / Lighting department",
+      "dept_hi": "विद्युत / प्रकाश विभाग",
+      "caveat_en": "Note the pole number if one is painted on it. It speeds things up a lot.",
+      "caveat_hi": "खंभे पर नंबर लिखा हो तो ज़रूर नोट करें, काम जल्दी होता है।"
+    },
+    {
+      "id": "power",
+      "en": "Power cut / electricity bill / transformer",
+      "hi": "बिजली कटौती / बिजली बिल / ट्रांसफ़ॉर्मर",
+      "body": "discom",
+      "dept_en": "Electricity distribution company (DISCOM)",
+      "dept_hi": "बिजली वितरण कंपनी (DISCOM)",
+      "caveat_en": "The municipality does not handle home electricity. Call 1912 (electricity complaint number) and keep your consumer number ready.",
+      "caveat_hi": "घर की बिजली नगर निगम का काम नहीं है। 1912 पर कॉल करें और उपभोक्ता क्रमांक तैयार रखें।"
+    },
+    {
+      "id": "stray",
+      "en": "Stray dogs / cattle on road",
+      "hi": "आवारा कुत्ते / सड़क पर मवेशी",
+      "body": "municipal",
+      "dept_en": "Health / Veterinary / Cattle-catching squad",
+      "dept_hi": "स्वास्थ्य / पशु चिकित्सा / मवेशी पकड़ दस्ता"
+    },
+    {
+      "id": "encroachment",
+      "en": "Illegal construction / footpath encroachment",
+      "hi": "अवैध निर्माण / फुटपाथ पर कब्ज़ा",
+      "body": "municipal",
+      "dept_en": "Building Permission / Removal (encroachment) department",
+      "dept_hi": "भवन अनुज्ञा / रिमूवल (अतिक्रमण) विभाग",
+      "caveat_en": "Disputes involving a specific neighbour can escalate. Describe the structure, not the person, and stick to facts.",
+      "caveat_hi": "किसी पड़ोसी से जुड़ा मामला बढ़ सकता है। व्यक्ति नहीं, निर्माण का वर्णन करें, सिर्फ़ तथ्य लिखें।"
+    },
+    {
+      "id": "noise",
+      "en": "Noise / loudspeaker / pollution",
+      "hi": "शोर / लाउडस्पीकर / प्रदूषण",
+      "body": "police",
+      "dept_en": "Police (urgent: 112) and State Pollution Control Board",
+      "dept_hi": "पुलिस (तुरंत: 112) और राज्य प्रदूषण नियंत्रण बोर्ड"
+    },
+    {
+      "id": "safety",
+      "en": "Crime / threat / harassment / emergency",
+      "hi": "अपराध / धमकी / उत्पीड़न / आपात स्थिति",
+      "body": "police",
+      "dept_en": "Police: 112 (emergency), women's helpline 1091, cyber crime 1930",
+      "dept_hi": "पुलिस: 112 (आपातकाल), महिला हेल्पलाइन 1091, साइबर अपराध 1930",
+      "caveat_en": "In an emergency call 112 first. Do not wait on any online complaint.",
+      "caveat_hi": "आपात स्थिति में पहले 112 पर कॉल करें। ऑनलाइन शिकायत का इंतज़ार न करें।"
+    },
+    {
+      "id": "ration",
+      "en": "Ration / PDS / state scheme benefit not received",
+      "hi": "राशन / PDS / राज्य योजना का लाभ नहीं मिला",
+      "body": "state",
+      "dept_en": "State Food & Civil Supplies / scheme department, via the state grievance system",
+      "dept_hi": "राज्य खाद्य एवं नागरिक आपूर्ति / योजना विभाग, राज्य शिकायत प्रणाली के ज़रिए"
+    },
+    {
+      "id": "central",
+      "en": "Central govt service (railway, post, passport, bank, PF)",
+      "hi": "केंद्र सरकार की सेवा (रेलवे, डाक, पासपोर्ट, बैंक, PF)",
+      "body": "central",
+      "dept_en": "Concerned central ministry via CPGRAMS. Railways: Rail Madad 139.",
+      "dept_hi": "संबंधित केंद्रीय मंत्रालय, CPGRAMS के ज़रिए। रेलवे: रेल मदद 139।"
+    }
+  ],
+  "escalation_ladder": [
+    { "step": 1, "en": "File with the responsible department's official channel. Save the complaint/reference number.", "hi": "ज़िम्मेदार विभाग के आधिकारिक माध्यम पर शिकायत करें। शिकायत/संदर्भ नंबर संभालकर रखें।" },
+    { "step": 2, "en": "No action in the promised time: visit or write to the zone office, quoting the reference number.", "hi": "तय समय में कार्रवाई न हो: संदर्भ नंबर के साथ ज़ोन कार्यालय जाएँ या लिखें।" },
+    { "step": 3, "en": "Contact your ward councillor's office. They can push the zone office directly.", "hi": "अपने वार्ड पार्षद के कार्यालय से संपर्क करें। वे ज़ोन कार्यालय पर सीधा दबाव बना सकते हैं।" },
+    { "step": 4, "en": "Escalate to the state grievance system, which tracks the responsible officer.", "hi": "राज्य शिकायत प्रणाली पर शिकायत आगे बढ़ाएँ, जहाँ ज़िम्मेदार अधिकारी ट्रैक होता है।" },
+    { "step": 5, "en": "Write to your MLA (state-level issues) or MP (central schemes, highways, railways).", "hi": "अपने विधायक (राज्य स्तर के मामले) या सांसद (केंद्रीय योजनाएँ, हाईवे, रेलवे) को लिखें।" },
+    { "step": 6, "en": "File an RTI asking what action was taken on your complaint number and by which officer. ₹10 fee; reply due within 30 days.", "hi": "RTI लगाएँ: आपकी शिकायत पर क्या कार्रवाई हुई और किस अधिकारी ने की। शुल्क ₹10; जवाब 30 दिन में।" }
+  ]
+}

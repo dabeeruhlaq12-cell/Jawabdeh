@@ -1,0 +1,96 @@
+{
+  "id": "surat",
+  "name_en": "Surat",
+  "name_hi": "सूरत",
+  "state": "gj",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Surat Municipal Corporation",
+    "name_hi": "सूरत नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "18001238000",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-surat-municipal-corporation-smc/1671"
+      },
+      {
+        "type": "phone",
+        "value": "7623838000",
+        "label_en": "WhatsApp complaints",
+        "label_hi": "WhatsApp पर शिकायत",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-surat-municipal-corporation-smc/1671"
+      },
+      {
+        "type": "web",
+        "value": "suratmunicipal.gov.in",
+        "label_en": "Online complaint (Online Services)",
+        "label_hi": "ऑनलाइन शिकायत (ऑनलाइन सेवाएँ)",
+        "status": "verified",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-surat-municipal-corporation-smc/1671"
+      }
+    ],
+    "escalation": "Public Grievance Cell, Surat Municipal Corporation, Muglisara, Surat 395003"
+  },
+  "discom": {
+    "name_en": "DGVCL (Dakshin Gujarat Vij Co.); Torrent Power in parts of the city"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Mukesh Dalal",
+        "seat": "Surat"
+      },
+      {
+        "name": "C. R. Patil",
+        "seat": "Navsari (part of city)"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Surat East",
+        "name": "Arvind Rana"
+      },
+      {
+        "seat": "Surat North",
+        "name": "Kanti Balar"
+      },
+      {
+        "seat": "Varachha Road",
+        "name": "Kishor Kanani"
+      },
+      {
+        "seat": "Karanj",
+        "name": "Pravin Ghoghari"
+      },
+      {
+        "seat": "Katargam",
+        "name": "Vinu Moradiya"
+      },
+      {
+        "seat": "Surat West",
+        "name": "Purnesh Modi"
+      },
+      {
+        "seat": "Majura",
+        "name": "Harsh Sanghavi"
+      },
+      {
+        "seat": "Udhna",
+        "name": "Manu Patel"
+      },
+      {
+        "seat": "Limbayat",
+        "name": "Sangita Patil"
+      }
+    ],
+    "mla_status": "needs_verification"
+  },
+  "geo": [
+    21.17,
+    72.83
+  ]
+}

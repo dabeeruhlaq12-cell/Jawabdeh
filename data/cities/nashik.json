@@ -1,0 +1,71 @@
+{
+  "id": "nashik",
+  "name_en": "Nashik",
+  "name_hi": "नासिक",
+  "state": "mh",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Nashik Municipal Corporation",
+    "name_hi": "नासिक नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "7030300300",
+        "label_en": "NMC grievance helpline",
+        "label_hi": "मनपा शिकायत हेल्पलाइन",
+        "status": "verified",
+        "source": "https://nmc.gov.in/home/index/E"
+      },
+      {
+        "type": "phone",
+        "value": "18002677953",
+        "label_en": "Streetlight complaints",
+        "label_hi": "स्ट्रीटलाइट शिकायत",
+        "status": "verified",
+        "source": "https://nmc.gov.in/home/index/E"
+      },
+      {
+        "type": "web",
+        "value": "nmc.gov.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "Maharashtra State Electricity Distribution (MSEDCL / Mahavitaran)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Rajabhau Waje",
+        "seat": "Nashik"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Nashik East",
+        "name": "Rahul Dhikale"
+      },
+      {
+        "seat": "Nashik Central",
+        "name": "Devyani Pharande"
+      },
+      {
+        "seat": "Nashik West",
+        "name": "Seema Hiray"
+      },
+      {
+        "seat": "Deolali",
+        "name": "Saroj Ahire"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/2024_Maharashtra_Legislative_Assembly_election"
+  },
+  "geo": [
+    20.0,
+    73.79
+  ]
+}

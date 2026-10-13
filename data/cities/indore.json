@@ -1,0 +1,81 @@
+{
+  "id": "indore",
+  "name_en": "Indore",
+  "name_hi": "इंदौर",
+  "state": "mp",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Indore Municipal Corporation",
+    "name_hi": "इंदौर नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "18002335522",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/where-can-you-file-civic-complaints-of-indore-municipal-corporation-imc/1744"
+      },
+      {
+        "type": "phone",
+        "value": "07314071717",
+        "label_en": "Citizen helpline",
+        "label_hi": "नागरिक हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/where-can-you-file-civic-complaints-of-indore-municipal-corporation-imc/1744"
+      },
+      {
+        "type": "app",
+        "value": "Indore 311",
+        "label_en": "Indore 311 app (photo + location)",
+        "label_hi": "Indore 311 ऐप (फ़ोटो + लोकेशन)",
+        "status": "verified",
+        "source": "https://apps.apple.com/app/id1135167189"
+      }
+    ],
+    "escalation": "Deputy Commissioner, Public Grievance Cell, Indore Nagar Palika Nigam, Shivaji Market, Nagar Nigam Square, Indore 452001"
+  },
+  "discom": {
+    "name_en": "MP Paschim Kshetra Vidyut Vitaran Co. (West DISCOM)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Shankar Lalwani",
+        "seat": "Indore"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Indore-1",
+        "name": "Kailash Vijayvargiya"
+      },
+      {
+        "seat": "Indore-2",
+        "name": "Ramesh Mendola"
+      },
+      {
+        "seat": "Indore-3",
+        "name": "Golu (Rakesh) Shukla"
+      },
+      {
+        "seat": "Indore-4",
+        "name": "Malini Gaur"
+      },
+      {
+        "seat": "Indore-5",
+        "name": "Mahendra Hardia"
+      },
+      {
+        "seat": "Rau",
+        "name": "Madhu Verma"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Indore_Lok_Sabha_constituency"
+  },
+  "geo": [
+    22.72,
+    75.86
+  ]
+}

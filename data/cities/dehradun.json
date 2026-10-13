@@ -1,0 +1,92 @@
+{
+  "id": "dehradun",
+  "name_en": "Dehradun",
+  "name_hi": "देहरादून",
+  "state": "uk",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Dehradun Nagar Nigam",
+    "name_hi": "देहरादून नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "18001802525",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-dehradun-municipal-corporation/237"
+      },
+      {
+        "type": "phone",
+        "value": "01352714074",
+        "label_en": "Citizen helpline",
+        "label_hi": "नागरिक हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-dehradun-municipal-corporation/237"
+      },
+      {
+        "type": "web",
+        "value": "nagarnigamdehradun.com",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ],
+    "escalation": "Municipal Commissioner, Public Grievance Cell, Nagar Nigam Dehradun, near Doon Hospital, Race Course, Dehradun 248001"
+  },
+  "discom": {
+    "name_en": "Uttarakhand Power Corporation (UPCL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Mala Rajya Laxmi Shah",
+        "seat": "Tehri Garhwal"
+      },
+      {
+        "name": "Trivendra Singh Rawat",
+        "seat": "Haridwar (part of city)"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Rajpur Road",
+        "name": "Khajan Dass"
+      },
+      {
+        "seat": "Dehradun Cantt.",
+        "name": "Savita Kapoor"
+      },
+      {
+        "seat": "Raipur",
+        "name": "Umesh Sharma 'Kau'"
+      },
+      {
+        "seat": "Mussoorie",
+        "name": "Ganesh Joshi"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Tehri_Garhwal_Lok_Sabha_constituency",
+    "mla_note_en": "Dharampur and other southern parts of the city fall in Haridwar Lok Sabha.",
+    "mla_note_hi": "धरमपुर और शहर के दक्षिणी हिस्से हरिद्वार लोकसभा में आते हैं।"
+  },
+  "water": {
+    "name_en": "Uttarakhand Jal Sansthan",
+    "name_hi": "उत्तराखंड जल संस्थान",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "18001804100",
+        "label_en": "Drinking water & sewerage",
+        "label_hi": "पेयजल और सीवरेज",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-dehradun-municipal-corporation/237"
+      }
+    ]
+  },
+  "geo": [
+    30.32,
+    78.03
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "vijayawada",
+  "name_en": "Vijayawada",
+  "name_hi": "विजयवाड़ा",
+  "state": "ap",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Vijayawada Municipal Corporation",
+    "name_hi": "विजयवाड़ा नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "08662421058",
+        "label_en": "VMC support (Mon–Sat, 9:30–5:30)",
+        "label_hi": "VMC सहायता (सोम–शनि, 9:30–5:30)",
+        "status": "needs_verification",
+        "source": "https://www.indiacustomercare.com/vijayawada-municipal-corporation-contact-no"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "AP Central Power Distribution Co. (APCPDCL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Kesineni Sivanath",
+        "seat": "Vijayawada"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Vijayawada West",
+        "name": "Sujana Chowdary"
+      },
+      {
+        "seat": "Vijayawada Central",
+        "name": "Bonda Umamaheswara Rao"
+      },
+      {
+        "seat": "Vijayawada East",
+        "name": "Gadde Rama Mohan"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Vijayawada_Lok_Sabha_constituency"
+  },
+  "geo": [
+    16.51,
+    80.65
+  ]
+}

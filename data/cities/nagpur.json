@@ -1,0 +1,101 @@
+{
+  "id": "nagpur",
+  "name_en": "Nagpur",
+  "name_hi": "नागपुर",
+  "state": "mh",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Nagpur Municipal Corporation",
+    "name_hi": "नागपुर नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "155304",
+        "label_en": "NMC grievance helpline (8am–8pm)",
+        "label_hi": "मनपा शिकायत हेल्पलाइन (सुबह 8–रात 8)",
+        "status": "verified",
+        "source": "https://thehitavada.com/Encyc/2025/2/8/Devendra-Fadnavis-launchesNMC-s-helpline-155304.html"
+      },
+      {
+        "type": "phone",
+        "value": "14420",
+        "label_en": "Sewer / septic tank",
+        "label_hi": "सीवर / सेप्टिक टैंक",
+        "status": "needs_verification"
+      },
+      {
+        "type": "in_person",
+        "value": "",
+        "label_en": "Zone grievance day: 2nd & 4th Friday, 10am–1pm",
+        "label_hi": "ज़ोन शिकायत दिवस: दूसरा और चौथा शुक्रवार, सुबह 10–दोपहर 1",
+        "status": "verified",
+        "source": "https://www.thehitavada.com/Encyc/2026/7/4/nmc-to-hold-grievances-redressal-days-on-second-and-fourth-fridays-.html"
+      },
+      {
+        "type": "web",
+        "value": "nmcnagpur.gov.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "verified"
+      }
+    ],
+    "escalation": "Public Grievance Cell, NMC Head Office, Mahanagar Palika Marg, Civil Lines, Nagpur 440001"
+  },
+  "discom": {
+    "name_en": "Maharashtra State Electricity Distribution (MSEDCL / Mahavitaran)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Nitin Gadkari",
+        "seat": "Nagpur"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Nagpur South West",
+        "name": "Devendra Fadnavis"
+      },
+      {
+        "seat": "Nagpur South",
+        "name": "Mohan Mate"
+      },
+      {
+        "seat": "Nagpur East",
+        "name": "Krishna Khopde"
+      },
+      {
+        "seat": "Nagpur Central",
+        "name": "Pravin Datke"
+      },
+      {
+        "seat": "Nagpur West",
+        "name": "Vikas Thakre"
+      },
+      {
+        "seat": "Nagpur North",
+        "name": "Nitin Raut"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Nagpur_Lok_Sabha_constituency"
+  },
+  "dev_authority": {
+    "name_en": "Nagpur Improvement Trust (NIT)",
+    "name_hi": "नागपुर सुधार प्रन्यास (NIT)",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "07122531431",
+        "label_en": "NIT complaints (areas under NIT)",
+        "label_hi": "NIT शिकायत (NIT वाले इलाक़े)",
+        "status": "verified",
+        "source": "https://www.nitnagpur.org/contact/complaint-grievances"
+      }
+    ]
+  },
+  "geo": [
+    21.15,
+    79.09
+  ]
+}

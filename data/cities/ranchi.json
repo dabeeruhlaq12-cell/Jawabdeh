@@ -1,0 +1,60 @@
+{
+  "id": "ranchi",
+  "name_en": "Ranchi",
+  "name_hi": "रांची",
+  "state": "jh",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Ranchi Municipal Corporation",
+    "name_hi": "रांची नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "18001202929",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://www.indiacustomercare.com/node/16804"
+      },
+      {
+        "type": "phone",
+        "value": "18005701235",
+        "label_en": "Connect Centre (toll-free)",
+        "label_hi": "कनेक्ट सेंटर (टोल-फ़्री)",
+        "status": "needs_verification",
+        "source": "https://www.indiacustomercare.com/node/16804"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "Jharkhand Bijli Vitran Nigam (JBVNL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Sanjay Seth",
+        "seat": "Ranchi"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Ranchi",
+        "name": "C. P. Singh"
+      },
+      {
+        "seat": "Hatia",
+        "name": "Navin Jaiswal"
+      },
+      {
+        "seat": "Kanke",
+        "name": "Suresh Kumar Baitha"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Ranchi_Lok_Sabha_constituency"
+  },
+  "geo": [
+    23.34,
+    85.31
+  ]
+}

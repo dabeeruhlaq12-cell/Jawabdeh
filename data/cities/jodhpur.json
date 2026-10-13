@@ -1,0 +1,45 @@
+{
+  "id": "jodhpur",
+  "name_en": "Jodhpur",
+  "name_hi": "जोधपुर",
+  "state": "rj",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Nagar Nigam Jodhpur",
+    "name_hi": "जोधपुर नगर निगम",
+    "channels": []
+  },
+  "discom": {
+    "name_en": "Jodhpur Vidyut Vitran Nigam (JdVVNL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Gajendra Singh Shekhawat",
+        "seat": "Jodhpur"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Sardarpura",
+        "name": "Ashok Gehlot"
+      },
+      {
+        "seat": "Jodhpur",
+        "name": "Atul Bhansali"
+      },
+      {
+        "seat": "Soorsagar",
+        "name": "Devendra Joshi"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Jodhpur_Lok_Sabha_constituency"
+  },
+  "note_en": "A verified municipal helpline for Jodhpur has not been added yet. Rajasthan Sampark (181) accepts municipal complaints.",
+  "note_hi": "जोधपुर नगर निगम की पुष्ट हेल्पलाइन अभी नहीं जोड़ी गई है। राजस्थान संपर्क (181) पर नगर निगम की शिकायत दर्ज होती है।",
+  "geo": [
+    26.24,
+    73.02
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "mysuru",
+  "name_en": "Mysuru",
+  "name_hi": "मैसूरु",
+  "state": "ka",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Mysuru City Corporation",
+    "name_hi": "मैसूरु नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "18002005822",
+        "label_en": "Toll-free helpline",
+        "label_hi": "टोल-फ़्री हेल्पलाइन",
+        "status": "needs_verification",
+        "source": "https://www.deccanherald.com/content/522031/mcc-launches-toll-free-helpline.html"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "Chamundeshwari Electricity Supply Corp. (CESC Mysore)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Yaduveer Krishnadatta Chamaraja Wadiyar",
+        "seat": "Mysore"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Krishnaraja",
+        "name": "T. S. Srivatsa"
+      },
+      {
+        "seat": "Chamaraja",
+        "name": "K. Harish Gowda"
+      },
+      {
+        "seat": "Narasimharaja",
+        "name": "Tanveer Sait"
+      },
+      {
+        "seat": "Chamundeshwari",
+        "name": "G. T. Devegowda"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Mysore_Lok_Sabha_constituency"
+  },
+  "geo": [
+    12.3,
+    76.64
+  ]
+}

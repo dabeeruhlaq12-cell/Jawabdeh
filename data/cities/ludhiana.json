@@ -1,0 +1,65 @@
+{
+  "id": "ludhiana",
+  "name_en": "Ludhiana",
+  "name_hi": "लुधियाना",
+  "state": "pb",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Municipal Corporation Ludhiana",
+    "name_hi": "लुधियाना नगर निगम",
+    "channels": [
+      {
+        "type": "web",
+        "value": "mcludhiana.gov.in",
+        "label_en": "Online complaint / official website",
+        "label_hi": "ऑनलाइन शिकायत / आधिकारिक वेबसाइट",
+        "status": "needs_verification"
+      }
+    ]
+  },
+  "discom": {
+    "name_en": "Punjab State Power Corporation (PSPCL)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Amrinder Singh Raja Warring",
+        "seat": "Ludhiana"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Ludhiana East",
+        "name": "Daljit Singh Grewal"
+      },
+      {
+        "seat": "Ludhiana South",
+        "name": "Rajinder Pal Kaur Chhina"
+      },
+      {
+        "seat": "Atam Nagar",
+        "name": "Kulwant Singh Sidhu"
+      },
+      {
+        "seat": "Ludhiana Central",
+        "name": "Ashok Prashar Pappi"
+      },
+      {
+        "seat": "Ludhiana West",
+        "name": "Sanjeev Arora"
+      },
+      {
+        "seat": "Ludhiana North",
+        "name": "Madan Lal Bagga"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Ludhiana_Lok_Sabha_constituency"
+  },
+  "note_en": "A verified municipal helpline for Ludhiana has not been added yet. Use the Connect Punjab portal meanwhile.",
+  "note_hi": "लुधियाना नगर निगम की पुष्ट हेल्पलाइन अभी नहीं जोड़ी गई है। तब तक कनेक्ट पंजाब पोर्टल का उपयोग करें।",
+  "geo": [
+    30.9,
+    75.85
+  ]
+}
