@@ -1,0 +1,59 @@
+{
+  "id": "ujjain",
+  "name_en": "Ujjain",
+  "name_hi": "उज्जैन",
+  "state": "mp",
+  "last_reviewed": "2026-10-13",
+  "municipal": {
+    "name_en": "Ujjain Municipal Corporation",
+    "name_hi": "उज्जैन नगर निगम",
+    "channels": [
+      {
+        "type": "phone",
+        "value": "07342550659",
+        "label_en": "Municipal Commissioner's office",
+        "label_hi": "नगर निगम आयुक्त कार्यालय",
+        "status": "needs_verification",
+        "source": "https://www.indiacustomercare.com/node/17419"
+      },
+      {
+        "type": "web",
+        "value": "mpenagarpalika.gov.in",
+        "label_en": "MP e-Nagar Palika online complaint (choose Ujjain)",
+        "label_hi": "MP ई-नगरपालिका ऑनलाइन शिकायत (उज्जैन चुनें)",
+        "status": "needs_verification",
+        "source": "https://citizen.complainthub.org/t/how-can-i-file-civic-complaints-of-bhopal-municipal-corporation-bmc/1788"
+      }
+    ],
+    "escalation": "Municipal Commissioner, Municipal Corporation Ujjain, Kshatrapati Shivaji Bhawan, Agar Road, Ujjain"
+  },
+  "discom": {
+    "name_en": "MP Paschim Kshetra Vidyut Vitaran Co. (West DISCOM)"
+  },
+  "reps": {
+    "mps": [
+      {
+        "name": "Anil Firojiya",
+        "seat": "Ujjain"
+      }
+    ],
+    "mlas": [
+      {
+        "seat": "Ujjain North",
+        "name": "Anil Jain"
+      },
+      {
+        "seat": "Ujjain South",
+        "name": "Mohan Yadav"
+      }
+    ],
+    "mla_status": "verified",
+    "mla_source": "https://en.wikipedia.org/wiki/Ujjain_Lok_Sabha_constituency"
+  },
+  "note_en": "No dedicated municipal helpline has been verified yet. The MP CM Helpline (181) accepts municipal complaints and tracks the officer.",
+  "note_hi": "उज्जैन नगर निगम की अलग हेल्पलाइन अभी पुष्ट नहीं है। मुख्यमंत्री हेल्पलाइन (181) पर नगर निगम की शिकायत दर्ज होती है और अधिकारी ट्रैक होता है।",
+  "geo": [
+    23.18,
+    75.78
+  ]
+}

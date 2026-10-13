@@ -9,7 +9,7 @@ An open dataset and a tiny app for Indian cities. Pick your city, pick the probl
 3. The escalation ladder if nothing happens: zone office → councillor → state grievance system → MLA/MP → RTI
 4. A ready-to-send complaint draft in Hindi or English
 
-**30 cities across 17 states**, chosen from tier-2 India where good civic information is hardest to find: Agra, Bhopal, Bhubaneswar, Chandigarh, Coimbatore, Dehradun, Guwahati, Indore, Jabalpur, Jaipur, Jodhpur, Kanpur, Kochi, Lucknow, Ludhiana, Madurai, Mysuru, Nagpur, Nashik, Patna, Raipur, Rajkot, Ranchi, Surat, Thiruvananthapuram, Udaipur, Vadodara, Varanasi, Vijayawada, Visakhapatnam.
+**30 cities across 17 states**, chosen from tier-2 India where good civic information is hardest to find: Agra, Bhopal, Bhubaneswar, Chandigarh, Dehradun, Guwahati, Indore, Jabalpur, Jaipur, Jodhpur, Kanpur, Kochi, Lucknow, Ludhiana, Madurai, Mysuru, Nagpur, Nashik, Patna, Raipur, Rajkot, Ranchi, Surat, Thiruvananthapuram, Udaipur, Ujjain, Vadodara, Varanasi, Vijayawada, Visakhapatnam.
 
 Built for NGOs and community workers: works in Hindi and English, the complaint draft can be copied or sent straight to WhatsApp, and "Share this guide" copies a short summary for a WhatsApp group.
 
@@ -61,7 +61,7 @@ scripts/
 3. Run `python3 scripts/build.py` and open `app/index.html` to check.
 4. Open a pull request.
 
-The most valuable contributions right now: **ward councillor lists**, **ward → assembly constituency mapping**, verified helplines for Ludhiana, Jodhpur, Udaipur and Coimbatore, and MLA names for Coimbatore and Madurai (elected May 2026). Note: the 2008 delimitation orders use old ward numbers that no longer match current wards, so they cannot be copied directly.
+The most valuable contributions right now: **ward councillor lists**, **ward → assembly constituency mapping**, verified helplines for Ludhiana, Jodhpur, Udaipur and Ujjain, and MLA names for Madurai (elected May 2026). Note: the 2008 delimitation orders use old ward numbers that no longer match current wards, so they cannot be copied directly.
 
 ## Licence
 

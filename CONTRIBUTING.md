@@ -24,6 +24,6 @@ Open an issue using **Report wrong or missing information**. Tell us the city, w
 ## Most needed now
 
 - Ward councillor lists for any city
-- Verified municipal helplines for Ludhiana, Jodhpur, Udaipur, Coimbatore and Mysuru
-- MLAs for Coimbatore and Madurai (elected May 2026)
+- Verified municipal helplines for Ludhiana, Jodhpur, Udaipur, Ujjain and Mysuru
+- MLAs for Madurai (elected May 2026)
 - New cities
