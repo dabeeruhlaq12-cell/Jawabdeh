@@ -1,0 +1,198 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+/* 9:16 motion graphic in the Jawabdeh inland-letter identity. Rendered frame by frame: window.render(t) sets the scene at t seconds. */
+:root{--bg:#E9EEF2;--paper:#F7F9FB;--inland:#D3E4F1;--line:#A9C3D9;--ink:#16213D;--ink2:#4A5672;--red:#C8102E;--redsoft:#F6D9DD}
+*{box-sizing:border-box;margin:0}
+html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);font-family:"Inter","FreeSans",sans-serif;color:var(--ink)}
+.s{position:absolute;inset:0;opacity:0}
+.band{position:absolute;left:0;right:0;top:0;height:10px;background:repeating-linear-gradient(90deg,var(--red) 0 22px,transparent 22px 30px,var(--ink) 30px 52px,transparent 52px 60px)}
+.h{font-family:"Inter Display","Inter",sans-serif;font-weight:900;letter-spacing:-.02em;line-height:.98}
+.hi{font-family:"FreeSans",sans-serif;font-weight:700;color:var(--ink2)}
+.mono{font-family:"Courier 10 Pitch","FreeMono","Courier New",monospace}
+.hand{font-family:"FreeSerif",serif;font-style:italic;color:var(--red)}
+.center{position:absolute;left:40px;right:40px;text-align:center}
+/* scene 1: road */
+#road{position:absolute;left:-40px;right:-40px;top:520px;height:300px;background:#3B4258;transform:skewY(-6deg)}
+#road i{position:absolute;top:140px;height:10px;width:70px;background:#E9EEF2;border-radius:3px}
+#hole{position:absolute;left:250px;top:610px;width:170px;height:62px;border-radius:50%;background:#1E2232;box-shadow:inset 0 10px 0 #121521}
+#splash{position:absolute;left:230px;top:580px;width:210px;height:30px}
+/* scene 2: who */
+.who{position:absolute;padding:14px 22px;border:3px solid var(--ink);border-radius:999px;background:var(--paper);font-weight:800;font-size:30px;white-space:nowrap}
+/* phone */
+#phone{position:absolute;left:70px;top:150px;width:400px;height:660px;border-radius:46px;background:var(--ink);padding:14px;box-shadow:0 30px 60px -20px rgba(22,33,61,.5)}
+#screen{position:relative;width:100%;height:100%;border-radius:34px;background:var(--bg);overflow:hidden}
+#screen .mast{position:absolute;left:0;right:0;top:0;height:64px;border-bottom:3px solid var(--red);display:flex;align-items:center;padding:0 20px;font-weight:900;font-size:26px}
+#screen .mast b{color:var(--red)}
+.pv{position:absolute;left:0;right:0;top:64px;bottom:0;padding:22px;opacity:0}
+.q{font-family:"Inter Display",sans-serif;font-weight:900;font-size:40px;line-height:1;letter-spacing:-.02em}
+.q em{font-style:normal;color:var(--red)}
+.search{margin-top:20px;height:58px;border:3px solid var(--ink);border-radius:14px;background:var(--paper);box-shadow:5px 5px 0 var(--ink);display:flex;align-items:center;padding:0 16px;font-size:24px}
+.caret{display:inline-block;width:2px;height:28px;background:var(--ink);margin-left:2px}
+.chips{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chip{height:58px;border-radius:12px;background:var(--paper);border:2px solid #C9D3DC;display:flex;align-items:center;padding:0 14px;font-size:21px;font-weight:600}
+.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tiles{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{height:112px;border-radius:16px;background:var(--paper);border:2px solid #C9D3DC;padding:12px;font-size:19px;font-weight:600;display:flex;flex-direction:column;justify-content:space-between}
+.tile svg{width:34px;height:34px}
+.tile.on{border-color:var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.office{font-family:"Inter Display",sans-serif;font-weight:900;font-size:36px;line-height:1.02;margin-top:6px}
+.callcard{margin-top:18px;border-radius:20px;background:var(--ink);color:var(--paper);padding:20px}
+.callcard .n{font-size:40px;font-weight:700;margin:8px 0 14px}
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:800;padding:12px 22px;border-radius:12px;font-size:20px}
+/* finger */
+#tap{position:absolute;width:56px;height:56px;border-radius:50%;background:rgba(200,16,46,.28);border:3px solid var(--red);opacity:0;z-index:5}
+/* letter */
+#letterwrap{position:absolute;left:46px;right:46px;top:270px;perspective:1400px}
+#letter{position:relative;background:var(--inland);border-radius:8px;padding:30px 26px;line-height:44px;font-size:22px;transform-origin:top center;
+  background-image:repeating-linear-gradient(180deg,transparent 0 43px,var(--line) 43px 44px);background-position:0 26px;box-shadow:0 30px 50px -24px rgba(22,33,61,.55)}
+#letter::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;border-radius:8px 8px 0 0;background:repeating-linear-gradient(90deg,var(--red) 0 18px,transparent 18px 26px,var(--ink) 26px 44px,transparent 44px 52px)}
+#stamp{position:absolute;right:18px;top:24px;width:150px;height:150px;border-radius:50%;border:5px solid var(--red);color:var(--red);display:grid;place-items:center;text-align:center;
+  font-weight:800;font-size:13px;letter-spacing:.08em;opacity:0}
+#stamp::before{content:"";position:absolute;inset:9px;border-radius:50%;border:2px dashed var(--red)}
+#stamp b{display:block;font-family:"Inter Display",sans-serif;font-size:36px;letter-spacing:0}
+/* route */
+.step{position:absolute;left:60px;display:flex;align-items:center;gap:22px;opacity:0}
+.pm{width:78px;height:78px;border-radius:50%;border:4px solid var(--ink);background:var(--bg);display:grid;place-items:center;font-weight:800;font-size:22px}
+.step .t{font-size:30px;font-weight:800;line-height:1.05}
+.step .w{font-size:18px;color:var(--red);font-weight:700;letter-spacing:.04em}
+#rline{position:absolute;left:97px;width:4px;top:330px;height:0;background:repeating-linear-gradient(180deg,var(--ink2) 0 10px,transparent 10px 18px)}
+</style></head>
+<body>
+<div class="band"></div>
+
+<!-- 1 problem -->
+<div class="s" id="s1">
+  <div class="center h" id="s1t" style="top:150px;font-size:76px">Problem on<br>your street?</div>
+  <div class="center hi" id="s1h" style="top:330px;font-size:34px">गली में कोई परेशानी?</div>
+  <div id="road"><i style="left:60px"></i><i style="left:200px"></i><i style="left:340px"></i><i style="left:480px"></i></div>
+  <div id="hole"></div>
+</div>
+
+<!-- 2 who -->
+<div class="s" id="s2">
+  <div class="center h" style="top:130px;font-size:70px">Who do you<br>complain to<span style="color:var(--red)">?</span></div>
+  <div class="who" id="w1" style="left:60px;top:430px">MP?</div>
+  <div class="who" id="w2" style="left:290px;top:400px">MLA?</div>
+  <div class="who" id="w3" style="left:90px;top:560px">Councillor?</div>
+  <div class="who" id="w4" style="left:150px;top:690px">Municipality?</div>
+  <div class="who" id="w5" style="left:330px;top:540px">CM?</div>
+</div>
+
+<!-- 3-5 phone -->
+<div class="s" id="s3">
+  <div class="center h" id="cap" style="top:46px;font-size:44px"></div>
+  <div id="phone"><div id="screen">
+    <div class="mast">जवाब<b>देह</b></div>
+    <div class="pv" id="p1">
+      <div class="q">Which <em>city</em><br>are you in?</div>
+      <div class="search"><span id="typed"></span><span class="caret" id="caret"></span></div>
+      <div class="chips"><div class="chip" id="cIndore">Nagpur</div><div class="chip">Nashik</div><div class="chip">Indore</div><div class="chip">Ujjain</div></div>
+    </div>
+    <div class="pv" id="p2">
+      <div class="q">What is the<br><em>problem</em>?</div>
+      <div class="tiles">
+        <div class="tile" id="tRoad"><svg viewBox="0 0 24 24" fill="none" stroke="#16213D" stroke-width="2" stroke-linecap="round"><path d="M5 21 9.5 3M19 21 14.5 3"/><ellipse cx="13.5" cy="17" rx="3" ry="1.5" fill="#C8102E" stroke="#C8102E"/></svg>Pothole</div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#16213D" stroke-width="2"><path d="M12 3s6.5 7.2 6.5 11.5a6.5 6.5 0 0 1-13 0C5.5 10.2 12 3 12 3z"/></svg>No water</div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#16213D" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg>Garbage</div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#16213D" stroke-width="2"><path d="M13 2 5 13h6l-1 9 8-11h-6z"/></svg>Power cut</div>
+      </div>
+    </div>
+    <div class="pv" id="p3">
+      <div class="mono" style="font-size:18px;color:#4A5672">Responsible:</div>
+      <div class="office">Nagpur Municipal<br>Corporation</div>
+      <div class="mono" style="font-size:17px;margin-top:6px">Engineering dept · zone office</div>
+      <div class="callcard"><div style="font-size:17px;opacity:.85">Grievance helpline · verified</div><div class="n mono">155304</div><span class="btn">Call</span></div>
+    </div>
+  </div></div>
+  <div id="tap"></div>
+</div>
+
+<!-- 6 letter -->
+<div class="s" id="s6">
+  <div class="center h" style="top:70px;font-size:52px">A ready<br>complaint letter</div>
+  <div class="center hi" style="top:200px;font-size:26px">हिंदी या English · WhatsApp पर भेजें</div>
+  <div id="letterwrap"><div id="letter">
+    <div class="mono">To,<br>Engineering Dept.<br>Nagpur Municipal Corp.</div>
+    <div class="mono"><b>Subject:</b> Pothole</div>
+    <div>Problem at <span class="hand" id="fill1" style="font-size:28px"></span>,</div>
+    <div>for <span class="hand" id="fill2" style="font-size:28px"></span>.</div>
+    <div>Please act and share the<br>complaint number.</div>
+    <div id="stamp"><div>JAWABDEH<b>FILED</b>13 OCT 2026</div></div>
+  </div></div>
+</div>
+
+<!-- 7 route -->
+<div class="s" id="s7">
+  <div class="center h" style="top:80px;font-size:58px">No action?<br><span style="color:var(--red)">Climb the steps.</span></div>
+  <div id="rline"></div>
+  <div class="step" id="r1" style="top:300px"><div class="pm" style="background:var(--red);border-color:var(--red);color:#fff">01</div><div><div class="w">TODAY</div><div class="t">City helpline</div></div></div>
+  <div class="step" id="r2" style="top:415px"><div class="pm">02</div><div><div class="w">7 DAYS</div><div class="t">Zone office</div></div></div>
+  <div class="step" id="r3" style="top:530px"><div class="pm">03</div><div><div class="w">15 DAYS</div><div class="t">Councillor</div></div></div>
+  <div class="step" id="r4" style="top:645px"><div class="pm">04</div><div><div class="w">30 DAYS</div><div class="t">State grievance portal</div></div></div>
+  <div class="step" id="r5" style="top:760px"><div class="pm">05</div><div><div class="w">45 DAYS</div><div class="t">MLA / MP · then RTI</div></div></div>
+</div>
+
+<!-- 8 end -->
+<div class="s" id="s8">
+  <div class="center h" id="endw" style="top:270px;font-size:104px">जवाब<span style="color:var(--red)">देह</span></div>
+  <div class="center h" style="top:420px;font-size:40px">The right office.<br>The right step.</div>
+  <div class="center" style="top:560px;font-size:26px;font-weight:700;color:#4A5672">30 cities · Free · No sign-up<br>हिंदी + English</div>
+  <div class="center mono" style="top:720px;font-size:34px;font-weight:700;background:var(--ink);color:var(--paper);padding:20px;border-radius:16px">jawabdeh.vercel.app</div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=x=>Math.max(0,Math.min(1,x));
+const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;          // in-out cubic
+const out=x=>1-Math.pow(1-x,3);                              // ease-out
+const back=x=>{const c=1.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)}; // overshoot
+const p=(t,a,b)=>clamp((t-a)/(b-a));
+// a scene's visibility: fade in at a, out at b
+function vis(el,t,a,b,f=.35){const o=Math.min(p(t,a,a+f),1-p(t,b-f,b));el.style.opacity=o;return o}
+function typeOut(el,text,t,a,b){el.textContent=text.slice(0,Math.round(text.length*p(t,a,b)))}
+
+window.render=function(t){
+  // 1 problem (0–3.4)
+  vis($('s1'),t,0,3.4);
+  $('s1t').style.transform=`translateY(${(1-out(p(t,0,.7)))*40}px)`;
+  $('s1h').style.opacity=out(p(t,.5,1.1));
+  const hs=back(p(t,.8,1.5));$('hole').style.transform=`scale(${hs})`;
+  // 2 who (3.2–6.6)
+  vis($('s2'),t,3.2,6.6);
+  ['w1','w2','w3','w4','w5'].forEach((id,i)=>{const k=back(p(t,3.5+i*.18,4.1+i*.18));const wob=Math.sin((t-3.5)*4+i)*4;
+    $(id).style.transform=`scale(${k}) rotate(${wob*(t<6?1:0)}deg)`;});
+  // 3 phone (6.4–17.6)
+  const sp=vis($('s3'),t,6.4,17.6);
+  $('phone').style.transform=`translateY(${(1-out(p(t,6.4,7.2)))*120}px)`;
+  const cap=$('cap');
+  cap.textContent=t<10.2?'1. Pick your city':t<13?'2. Pick the problem':'3. See who handles it';
+  vis($('p1'),t,6.6,10.4,.25); typeOut($('typed'),'Nag',t,7.8,8.8);
+  $('caret').style.opacity=(Math.floor(t*2.5)%2)?1:0;
+  $('cIndore').classList.toggle('on',t>9.4);
+  vis($('p2'),t,10.2,13.2,.25); $('tRoad').classList.toggle('on',t>12.2);
+  vis($('p3'),t,13,18,.3);
+  $('p3').style.transform=`translateY(${(1-out(p(t,13,13.7)))*30}px)`;
+  // tap indicator
+  const tap=$('tap');let tx=0,ty=0,to=0;
+  const tapAt=(a,x,y)=>{const k=p(t,a-.35,a+.35);if(k>0&&k<1){tx=x;ty=y;to=Math.sin(k*Math.PI)}};
+  tapAt(9.4,110,420); tapAt(12.2,110,410); tapAt(16.3,130,700);
+  tap.style.opacity=to;tap.style.left=tx+'px';tap.style.top=ty+'px';tap.style.transform=`scale(${.6+to*.5})`;
+  // 6 letter (17.4–24.4)
+  vis($('s6'),t,17.4,24.4);
+  const uf=out(p(t,17.5,18.6));$('letter').style.transform=`rotateX(${(1-uf)*-80}deg)`;$('letter').style.opacity=.3+.7*uf;
+  typeOut($('fill1'),'Sitabuldi main road',t,19,20.4); typeOut($('fill2'),'10 days',t,20.6,21.3);
+  const st=p(t,22,22.6);const sb=back(st);
+  $('stamp').style.opacity=st>0?.92:0;
+  $('stamp').style.transform=`translate(${(1-st)*40}px,${(1-st)*-80}px) rotate(${-40+28*sb}deg) scale(${2.4-1.4*sb})`;
+  // 7 route (24.2–30)
+  vis($('s7'),t,24.2,30);
+  $('rline').style.height=(ease(p(t,24.6,28.4))*500)+'px';
+  ['r1','r2','r3','r4','r5'].forEach((id,i)=>{const k=out(p(t,24.6+i*.75,25.2+i*.75));$(id).style.opacity=k;$(id).style.transform=`translateX(${(1-k)*-40}px)`});
+  // 8 end (29.8–34)
+  vis($('s8'),t,29.8,34.5,.4);
+  $('endw').style.transform=`scale(${.85+.15*out(p(t,29.8,30.6))})`;
+};
+window.render(0);
+</script>
+</body></html>
