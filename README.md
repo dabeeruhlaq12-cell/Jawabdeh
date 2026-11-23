@@ -24,7 +24,7 @@ That already exists (PRS, MyNeta). And most daily problems are not an MP's or ML
 - **The data is the product.** Everything lives in plain JSON in `data/`, so anyone can fork it, build a better app on it, or keep it alive.
 - **Every fact carries its source** and a `status`: `verified` or `needs_verification`. Never present a guess as fact.
 - **Official channels only.** No personal phone numbers of officials or representatives, ever. Office lines, helplines and portals only.
-- **No tracking.** The app runs fully in the browser: no accounts, no analytics, nothing about the user leaves their phone.
+- **Browser-first.** The app has no account or analytics code. It loads fonts from Google Fonts and opens external services when you choose an official channel or share a draft. The app itself does not file a complaint.
 - **Neutral.** Party names are listed as public record. No ratings, no commentary on individuals.
 
 ## Repo layout
@@ -42,6 +42,20 @@ scripts/
   build.py             # inlines data/ into app/index.html
   seed_data.py         # one-time seed with a source for every entry (kept as a record)
 ```
+
+## Run and check locally
+
+Python 3 and its standard library are enough to rebuild and validate the site.
+
+```sh
+python3 scripts/validate.py
+python3 scripts/build.py
+python3 -m http.server 8000
+```
+
+Open <http://localhost:8000/app/>. Pick a city and a problem, switch between Hindi and English, and preview the draft and escalation steps. Copying or sharing text and opening an official channel are separate from submitting the complaint. Follow that channel's instructions and keep the acknowledgement it issues.
+
+The build inlines the JSON into `app/index.html` and `docs/index.html`. Commit both generated files when editing data or the app template. The validator prints warnings for sources that still need verification.
 
 ## City file schema (short)
 
@@ -67,8 +81,8 @@ The most valuable contributions right now: **ward councillor lists**, **ward →
 
 ## Licence
 
-- Code: MIT
-- Data: CC BY 4.0. Please credit "Jawabdeh contributors" and keep sources attached.
+- Code and project documentation are available under the [MIT licence](LICENSE).
+- For the civic dataset and source attribution, see [the data licence](data/LICENSE.md).
 
 ## Maintainer
 
